@@ -11,3 +11,7 @@ If I were to redo this project now, I would likely
 - look into using templates for artist pages to reduce repetition
 - normalize the naming of assets for better readability and maintainability
 - consider using modern tools and frameworks for smoother workflows
+
+<img width="1158" height="654" alt="Näyttökuva 2026-01-27 kello 14 34 58" src="https://github.com/user-attachments/assets/2651c2ac-2d84-4909-bd36-1f6663528eec" />
+
+<img width="353" height="644" alt="Näyttökuva 2026-01-27 kello 14 38 58" src="https://github.com/user-attachments/assets/bb77574d-9fe6-48dd-8b84-139e81d364fc" />
