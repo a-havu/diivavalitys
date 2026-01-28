@@ -12,12 +12,10 @@ If I were to redo this project now, I would likely
 - normalize the naming of assets for better readability and maintainability
 - consider using modern tools and frameworks for smoother workflows
 
-To keep this repositpry lightweight, I've omitted all the artists' images and included only images for the carousel on the front page.
+To keep this repository lightweight, only images for the front page are included. I've also curated a small subset of artist pages to demonstrate the website's structure and functionality.
 
 # <a>https://diivavalitys.fi/</a>
 
 <img width="1158" height="654" alt="Näyttökuva 2026-01-27 kello 14 34 58" src="https://github.com/user-attachments/assets/2651c2ac-2d84-4909-bd36-1f6663528eec" />
-
-
-
+<br><br>
 <img width="353" height="644" alt="Näyttökuva 2026-01-27 kello 14 38 58" src="https://github.com/user-attachments/assets/bb77574d-9fe6-48dd-8b84-139e81d364fc" />

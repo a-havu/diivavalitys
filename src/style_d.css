@@ -1,0 +1,893 @@
+
+/***************** YLEISET ****************/
+
+/*colour palette: #EEEEFF, #black, #CE0074, #FFB8DE, #FFEEF4*/
+
+body {
+  background: #EEEEFF;
+  color: #000;
+  text-align: center;
+  margin: 0;
+  padding: 0; 
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+span {
+	background-color: #EEEFFF;
+	color: #CE0074;
+}
+
+figcaption {
+	font-size: 120%;
+	font-weight: 700;
+	padding: 1vw;
+	letter-spacing: 1px;
+	color: #EEEEFF;
+	background-color: #CE0074;
+}
+
+footer {
+  display: flex;
+  background: #CE0074;
+  color:#EEEEFF;
+  font-size: small;
+  font-weight: 300;
+  padding: 3%;
+  justify-content: center;
+}
+
+footer img {
+	width: 3%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.footerinfo {
+	display: flex;
+	flex-direction: column;
+}
+
+a img {
+   transition: opacity 0.3s ease;
+}
+
+a:hover img {
+   opacity: 0.7;
+   filter: saturate(111%) sepia(50%) hue-rotate(-50deg);
+}
+
+h1 {
+  font-weight: 600;
+  font-style: normal;
+  font-size: xx-large;
+}
+
+h3 {
+	font-weight: 200;
+}
+
+hr.solid {
+	border-top: 3px solid #CE0074;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+p {
+	font-weight: 300;
+}
+
+.page_top {
+	background-color: #EEEEFF !important;
+	height: 15vh;
+}
+
+.somekuvake {
+	max-width: 15%;
+	align-items: center;
+	padding-bottom: 8%;
+	padding-left: 6%;
+}
+
+.error p {
+	font-size: 150px;
+	margin: 0;
+}
+
+.error a {
+	color: #CE0074;
+	text-decoration-line: underline;
+    text-decoration-color: #CE0074;
+    text-decoration-thickness: 2px;
+	text-underline-offset: 4px;
+}
+
+/******************* NAVIGOINTIPALKKI ***********************/
+
+.navi {
+	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1000;
+	background-color: #EEEEFF;
+	width: 100%;
+	height: 15vh;
+	top: 0;
+	right: 0;
+	padding-bottom: 1%;
+}
+
+.navi img {
+	padding-left: 3%;
+}
+
+ul.navbar {
+	display: flex;
+	list-style-type: none;
+	padding-right: 5%;
+	padding-top: 1vh;
+	margin: 0;
+	flex-wrap: wrap;
+  }
+  
+  ul.navbar li {
+	display: flex;
+	margin-right: 25px;
+  }
+  
+  ul.navbar li a {
+	color: black;
+	padding: 14px 20px;
+	text-decoration: none;
+	transition: opacity 0.3s ease;
+	position: relative;
+	display: inline-block;
+	line-height: 1.2;
+	box-sizing: border-box;
+  }
+  
+  ul.navbar li a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px; 
+	background-color: #CE0074;
+	transition: width 0.3s ease;
+  }
+  
+  ul.navbar li a:hover::after {
+	  width: 100%; 
+	}
+
+.kulma {
+	margin-left: 0;
+	width: 10%;
+}
+
+.kulma a {
+	transition: none;
+}
+
+
+/******************** MUUT LINKIT *******************/
+
+ul.linkku {
+	display: flex;
+	list-style-type: none;
+	padding-right: 5%;
+	margin: 0;
+	flex-wrap: wrap;
+  }
+  
+  ul.linkku li {
+	display: flex;
+	margin-right: 25px;
+	margin-bottom: 2vh;
+  }
+  
+  ul.linkku li a {
+	color: black;
+	padding: 14px 20px;
+	text-decoration: none;
+	transition: opacity 0.3s ease;
+	position: relative;
+	display: inline-block;
+	line-height: 1.2;
+	box-sizing: border-box;
+  }
+  
+  ul.linkku li a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px; 
+	background-color: #CE0074;
+	transition: width 0.3s ease;
+  }
+  
+  ul.linkku li a:hover::after {
+	  width: 100%; 
+	}
+
+
+/******************** ARTISTISIVU *******************/
+
+.pinkbg {
+	background-color: #CE0074;
+	padding: 4vh;
+	color: #EEEEFF;
+}
+
+.artisti-gallery {
+	display: flex;
+	width: 100%;
+	height: 80vh;
+	position: relative;
+	margin: auto;
+	margin-top: 0;
+	align-items: center;
+}
+
+.artisti-gallery img {
+	width: 50vw;
+	max-height: 75vh;
+	object-fit: contain;
+}
+
+.slide {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	padding: 16px;
+	top: 50%;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	background-color: #FFB8DE;
+	border: none;
+	border-radius: 50%;
+	user-select: none;
+}
+
+.prev {
+	left: 0;
+	transform: translateY(-50%);
+}
+
+.next {
+	right: 0;
+	transform: translateY(-50%);
+}
+
+.artistikuvaus {
+  text-align: left;
+  max-width: 33%;
+  justify-content: center;
+  padding-left: 5vw;
+}
+
+.artistikuvaus a {
+	color:#CE0074;
+}
+
+.artistisivu-container {
+	display: flex;
+	flex-wrap: row;
+	padding-left: 10vw;
+	padding-right: 10vw;
+}
+
+.artistin-linkit img {
+	width: 10%;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.skills {
+	display: flex;
+	list-style-type: none;
+	gap: 2vw;
+}
+
+.skills li {
+	background: #FFB8DE;
+	padding: 1vw;
+	font-size: small;
+}
+
+/********************* ETUSIVU ******************/
+
+.keikkalinkku {
+	text-decoration: underline;
+	color: #EEEFFF;
+	font-weight: 500;
+	font-size: x-large;
+}
+
+.palkki {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	padding-top: 5vw;
+	padding-bottom: 5vw;
+}
+  
+.isolinkku {
+	font-weight: 900;
+	font-size: xx-large;
+	color: #000;
+	text-decoration-line: underline;
+    text-decoration-color: #CE0074;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 10px;
+}
+
+  .slideshow {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 61vh;
+	overflow: hidden;
+	position: relative;
+  }
+  
+  .slideshow-kuvat {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+  }
+  
+  .kuva {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	object-fit: cover;
+	transition: opacity 1s ease-in-out;
+	margin: 0;
+	position: absolute;
+  }
+
+  .kuva.active {
+	opacity: 1;
+	position: relative;
+  }
+
+.esittely-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	text-align: left;
+	background-color: #CE0074;
+	color: #EEEEFF;
+	padding: 7vw;
+	gap: 10vw;
+}
+
+.keikat {
+	padding: 10vh;
+	align-items: center;
+	justify-items: center;
+	background-color: #CE0074;
+	color: #EEEEFF;
+}
+
+.etusivu {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  border-radius: 50px;
+  width: 80%;
+  max-width: 600px;
+  height: auto;
+}
+
+.etusivu-uutiset {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding-left: 10%;
+	padding-right: 10%;
+	background-color: #EEEEFF;
+	color: #000;
+}
+
+.uutisbox {
+	display: flex;
+	flex-direction: column;
+	border: 2px solid #CE0074;
+	flex-wrap: wrap;
+	margin: 3%;
+	padding-bottom: 2%;
+	max-width: 100%;
+}
+
+.uutisbox a {
+	color: #000;
+	font-size: large;
+	text-decoration-line: underline;
+    text-decoration-color: #CE0074;
+    text-decoration-thickness: 2px;
+}
+
+.uutisbox img {
+	padding-bottom: 1%;
+}
+
+/********************* DIIVAT *********************/
+
+.gallery {
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 3%;
+  margin-right: 3%;
+  justify-content: center;
+  align-content: space-around;
+  background-color: #EEEEFF;
+}
+
+.gallery-item {
+width: 300px;
+height: 300px;
+object-fit: cover;
+transition: 0.3s ease;
+}
+
+/************** YHTEYSTIEDOT ***********/
+
+.yhteystiedot-container {
+	display: flex;
+	flex-direction: row;
+	padding-left: 30%;
+	padding-right: 30%;
+	justify-content: center;
+	align-items: center;
+}
+
+.yhteystiedot-container img {
+  width: 40%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+  object-fit: contain;
+}
+
+.yhteystiedot {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	margin-left: 0;
+ }
+
+ .yt-linkit {
+	width: 70%;
+ }
+
+ .yt-linkit img {
+	width: 15%;
+	margin: 3%;
+ }
+
+/************* AJANKOHTAISTA ************/
+
+.ajankohtaista-container {
+	display: flex;
+	flex-direction: row;
+	align-items: self-start;
+	height: 100%;
+}
+
+.keikat-container {
+	width: 33vw;
+	padding-left: 6vw;
+	background-color: #FFB8DE;
+	padding-right: 6vw;
+}
+
+.keikat-container h1 {
+	padding-top: 6vh;
+}
+
+.keikkalista {
+	list-style-type: none;
+	text-align: left;
+}
+
+.keikkalista li {
+	padding-top: 15px;
+}
+
+.keikkalista a {
+	text-decoration:none;
+	color: #CE0074;
+	font-weight: bold;
+}
+
+.uutinen-container {
+	margin-left: 10vw;
+	margin-right: 10vw;
+	width: 66vw;
+}
+
+.uutis-snippet {
+	width: 50%;
+}
+
+.uutinen-vasen {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	text-align: left;
+}
+
+.uutinen-vasen img {
+	width: 40%;
+	height: auto;
+	padding: 3%;
+	object-fit: contain;
+}
+
+.uutinen-oikea {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-around;
+	text-align: left;
+}
+
+.uutinen-oikea img {
+	width: 40%;
+	height: auto;
+	padding: 3%;
+	object-fit: contain;
+}
+
+.uutisteksti {
+	padding: 5%;
+}
+
+/************** PALVELUT *******************/
+
+.palvelut-container {
+	margin-left: 10%;
+	margin-right: 10%;
+	align-items: center;
+}
+
+.palvelu-vasen {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	text-align: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.palvelu-oikea {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	text-align: left;
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.palvelut-container img {
+	height: 40vh;
+	width: 30vw;
+	padding: 3%;
+	object-fit: cover;
+}
+
+.palveluteksti {
+	padding: 5%;
+	width: 60vw;
+}
+
+/**************UUTISPOHJA************************/
+
+.uutissivu {
+	display: flex;
+	text-align: left;
+	padding: 3vw;
+	align-items: flex-start;
+}
+
+.uutissivu img {
+	max-height: 70vh;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	padding-top: 15%;
+}
+
+.uutisteksti h1 {
+	margin-top: 0;
+}
+
+/**************MOBIILIOPTIMOINTI********************/
+
+.footer_d {
+	display: none;
+	width: 30%;
+	margin-left: 5vw;
+	object-fit: contain;
+}
+
+.hamburger {
+	display: none; 
+	width: 10vw;
+	height: 7vw;
+	cursor: pointer;
+	padding-right: 5vw;
+  }
+  
+  .hamburger span {
+	display: block;
+	width: 100%;
+	height: 3px;
+	transition: 0.3s ease;
+  }
+
+  .line {
+	background-color: #CE0074;
+	width: 100%;
+	height: 3px;
+	transition: all 0.3s ease;
+	z-index: 14;
+  }
+
+  .diivateksti {
+	display: none;
+  }
+  
+  @media (max-width: 768px) {
+
+	footer {
+		justify-content: space-around;
+	}
+
+	footer img {
+		width: 10%;
+		margin-left: 3%;
+		margin-right: 3%;
+	}
+
+	.footer_d {
+		display: block;
+	}
+
+	.ajankohtaista-container {
+		flex-direction: column;
+		width: 100%;
+	}
+
+
+	.keikat-container {
+		width: 100%;
+		height: 100%;
+		padding-bottom: 5%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.uutinen-container {
+		width: 80%;
+	}
+
+	.diivateksti {
+		display: flex;
+		align-items: center;
+		font-weight: 100;
+		text-align: center;
+		padding-left: 10vw;
+		letter-spacing: 4px;
+	  }
+
+	.artistisivu-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	  }
+
+	.artisti-gallery-item img {
+		width: 40vw;
+	}
+
+	.artisti-gallery img {
+		width: 80vw;
+	}
+
+	.artistikuvaus {
+		text-align: left;
+		max-width: 80%;
+		padding-left: 5vw;
+		padding-right: 5vw;
+	  }
+
+	  .prev, .next {
+		position: absolute;
+		height: 100%;
+		padding: 5vw;
+		opacity: 100%;
+		background-color: transparent;
+		border-radius: 0;
+		user-select: none;
+	}
+
+	  .skills li {
+		padding: 2vw;
+	  }
+
+	ul.navbar {
+	  display: none;
+	  width: 100%;
+	  flex-direction: column;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  background-color: #EEEEFF;
+	  padding-top: 20px;
+	  z-index: 10;
+	  text-align: right;
+	}
+
+	.navi {
+		position: fixed;
+		display: flex;
+		z-index: 1000;
+		background-color: #EEEEFF;
+		width: 100%;
+		height: 15%;
+		top: 0;
+		right: 0;
+		padding-bottom: 1%;
+		justify-content: space-between;
+	}
+  
+	.hamburger {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: space-between;
+	  z-index: 16;
+	}
+
+	.isolinkku {
+		font-size: 170%;
+	}
+  
+	ul.navbar.active {
+	  display: flex;
+	}
+  
+	ul.navbar li {
+	  margin-right: 0;
+	  margin-bottom: 20px;
+	}
+  
+	ul.navbar li a {
+	  padding: 12px;
+	  font-size: 18px;
+	}
+
+	.palvelu-vasen {
+		flex-direction: column;
+	}
+
+	.palvelu-oikea {
+		flex-direction: column;
+	}
+
+	.palvelut-container img {
+		width: 50vw;
+		height: 40vh;
+		padding: 3%;
+		object-fit: cover;
+	}
+
+	.linkku {
+		align-items: left;
+		text-align: left;
+	}
+
+	.esittely-container {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.kulma {
+		display: none;
+	}
+
+	.slideshow {
+		width: 100%;
+		height: 60v;
+	}
+
+	.slideshow-kuvat {
+		overflow: hidden;
+		object-fit: cover;
+		height: auto;
+		width: 100%;
+		height: 100%;
+	}
+
+	.kuva {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.uutinen-vasen {
+		display: flex;
+		flex-direction: column-reverse;
+		text-align: center;
+		align-items: center;
+	}
+
+	.uutinen-vasen img {
+		width: 70%;
+	}
+	
+	.uutinen-oikea {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+	}
+
+	.uutinen-oikea img {
+		width: 70%;
+	}
+
+	.uutissivu {
+		flex-direction: column;
+	}
+
+	.uutissivu img {
+		width: 80vw;
+		object-fit: contain;
+	}
+
+	.yhteystiedot-container {
+		flex-direction: column;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+
+	.yhteystiedot-container img {
+		width: 60%;
+		height: auto;
+		max-width: 100%;
+	}
+	
+	.yt-linkit {
+		width: 70%;
+	}
+
+	.yt-linkit img {
+		width: 20%;
+		margin: 3%;
+	}
+  }
