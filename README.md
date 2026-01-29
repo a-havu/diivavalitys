@@ -1,8 +1,8 @@
 # Diivavälitys website, a client project
-This is a static website I built for a client, using vanilla HTML, CSS and JavaScript.
+This is a website I built for a client, using vanilla HTML, CSS and JavaScript.
 
-The project was intentionally built without frameworks to get to the core of web technologies.
-Through this project, I strengthened my skills on HTML and CSS, and gained experience on JavaScript.
+The project was intentionally built without frameworks to get to the raw core of web technologies.
+Through this project, I strengthened my skills on HTML and CSS, and gained new experience on JavaScript.
 
 The project was done in close collaboration with the client, and the structure evolved based on their needs.
 After delivery, maintenance was handed over to the client.
@@ -12,7 +12,10 @@ If I were to redo this project now, I would likely
 - normalize the naming of assets for better readability and maintainability
 - consider using modern tools and frameworks for smoother workflows
 
-To keep this repository lightweight, only images for the front page are included. I've also curated a small subset of artist pages to demonstrate the website's structure and functionality.
+To keep this repository lightweight I've curated a small subset of artist pages, with their images, to demonstrate the website's structure and functionality.
+Also the images for the carousel on the front page are included.
+
+*The website is live here:*
 
 # <a>https://diivavalitys.fi/</a>
 
