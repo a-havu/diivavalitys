@@ -19,6 +19,12 @@
   }
 }
 
+@layer base {
+  h1 {
+    @apply text-3xl;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
