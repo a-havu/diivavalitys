@@ -12,9 +12,9 @@ export default function Header() {
             />
             </div>
             <nav className="flex flex-row justify-center align-baseline gap-6 mt-8">
-                <Link href="">DIIVAT</Link>
-                <Link href="">PALVELUT</Link>
-                <Link href="">AJANKOHTAISTA</Link>
+                <Link href="" className="p-2">DIIVAT</Link>
+                <Link href="" className="p-2">PALVELUT</Link>
+                <Link href="" className="p-2">AJANKOHTAISTA</Link>
                 <button className="bg-white text-black p-2">OTA YHTEYTTÄ</button>
             </nav>
         </header>
