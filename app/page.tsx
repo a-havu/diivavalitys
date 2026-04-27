@@ -1,11 +1,16 @@
+import Calendar from "@/components/Calendar";
 import Infosection from "@/components/Infosection";
+import News from "@/components/News";
 
 export default function HomePage() {
 
 return(
   <>
-  <h1>hello</h1>
   <Infosection />
+  <div className="flex flex-row">
+    <Calendar />
+    <News />
+  </div>
   </>
 );
 }

@@ -36,9 +36,6 @@ export default function RootLayout({
         <Header />
       </header>
       <body className="min-h-full flex flex-col">{children}</body>
-      <footer>
-        <Footer />
-      </footer>
     </html>
   );
 }
