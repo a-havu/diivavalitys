@@ -8,15 +8,17 @@ export default function Header() {
             <Image 
             src="/valk-logo.png"
             alt="diivavälitys logo"
-            width={100}
+            width={200}
             height={40}
             />
             </div>
-            <nav className="flex flex-row justify-center align-baseline gap-6 mt-8">
+            <nav className="flex flex-row justify-center align-baseline gap-6 p-6">
                 <Link href="/diivat" className="p-2">DIIVAT</Link>
                 <Link href="" className="p-2">PALVELUT</Link>
                 <Link href="" className="p-2">AJANKOHTAISTA</Link>
-                <button className="bg-white text-black p-2">OTA YHTEYTTÄ</button>
+                <Link href="">
+                <button className="bg-white text-black p-2 rounded-xl hover:cursor-pointer">OTA YHTEYTTÄ</button>
+                </Link>
             </nav>
         </header>
     );

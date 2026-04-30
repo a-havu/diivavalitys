@@ -1,20 +1,37 @@
-import Image from 'next/image'
 import { client } from '@/lib/sanity'
 import imageUrlBuilder from '@sanity/image-url'
-
-const builder = imageUrlBuilder(client)
-const urlFor = (source) => builder.image(source).url()
+import DivaCard from "@/components/diivat/DivaCard"
+import Link from 'next/link'
 
 export default async function DivaGallery() {
-  const artists = await client.fetch(`*[_type == "artist"]`)
+  const artists = await client.fetch(`*[_type == "artist"] | order(name asc)`)
   
   return (
-    <div>
+    <div className="grid grid-cols-4 gap-8 p-8">
       {artists.map(artist => (
-        <div key={artist._id}>
-          <DivaCard />
-        </div>
+        <Link href={`/diivat/${artist.slug.current}`}>
+          <DivaCard 
+          name={artist.name}
+          photo={artist.photo}/>
+        </Link>
       ))}
+      {/* {artists.map(artist => (
+  <div key={artist._id}>
+    {artist.slug?.current ? (
+      <Link href={`/diivat/${artist.slug.current}`}>
+        <DivaCard
+          name={artist.name}
+          photo={artist.photo}
+        />
+      </Link>
+    ) : (
+      <DivaCard
+        name={artist.name}
+        photo={artist.photo}
+      />
+    )}
+  </div>
+))} */}
     </div>
   )
 }
