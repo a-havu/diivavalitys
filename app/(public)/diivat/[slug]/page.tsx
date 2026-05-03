@@ -1,4 +1,3 @@
-// app/diivat/[slug]/page.tsx
 import { client } from '@/lib/sanity'
 import imageUrlBuilder from '@sanity/image-url'
 import Image from 'next/image'

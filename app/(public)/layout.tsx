@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/main/Header";
 import Footer from "@/components/main/Footer"
 
@@ -27,17 +27,17 @@ export default function RootLayout({
       lang="en"
       className={`${figtree.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-  <header>
-    <Header />
-  </header>
-  <main className="flex-1">
-    {children}
-  </main>
-  <footer>
-    <Footer />
-  </footer>
-</body>
+        <body className="min-h-full flex flex-col">
+    <header>
+        <Header />
+    </header>
+    <main className="flex-1">
+        {children}
+    </main>
+    <footer>
+        <Footer />
+    </footer>
+    </body>
     </html>
   );
 }

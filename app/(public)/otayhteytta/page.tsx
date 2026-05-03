@@ -1,7 +1,10 @@
-import { useForm, submithandler } from "react-hook-form"
+import ContactForm from "@/components/ContactForm";
 
-export default function ContactForm() {
+export default function ContactPage() {
     return(
-        <form></form>
+        <>
+        <h1>mo</h1>
+        <ContactForm />
+        </>
     );
 }
