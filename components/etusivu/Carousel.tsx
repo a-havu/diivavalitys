@@ -2,12 +2,12 @@ import Image from 'next/image'
 
 export default function Carousel() {
     return(
-        <div className="flex justify-center p-20">
+        <div className="relative w-full h-full">
         <Image
-        src="/logoprimary.png"
+        src="/hom.jpg"
         alt="logo"
-        width={200}
-        height={40}
+        fill
+        className="object-cover"
         />
         </div>
     );

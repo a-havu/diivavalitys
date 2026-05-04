@@ -9,6 +9,7 @@ export default function Footer() {
             alt="logo"
             width={150}
             height={0}
+            loading="eager"
             />
             <p>info@diivavalitys.fi</p>
             <p>+358 45 7831 0826</p>

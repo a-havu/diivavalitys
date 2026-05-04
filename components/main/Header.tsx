@@ -11,6 +11,7 @@ export default function Header() {
             alt="diivavälitys logo"
             width={200}
             height={40}
+            loading="eager"
             />
             </Link>
             </div>

@@ -1,13 +1,11 @@
-import DivaGallery from "@/components/diivat/DivaGallery"
-import Filters from "@/components/diivat/Filters"
+import { client } from '@/lib/sanity'
+import DivaGallery from '@/components/diivat/DivaGallery'
 
-export default function Diivat()
-{
-    return(
-        <>
-        <h1 className="flex justify-center p-8">Diivat</h1>
-        <Filters />
-        <DivaGallery />
-        </>
-    );
+export default async function DivaPage() {
+  const artists = await client.fetch(
+    `*[_type == "artist"] | order(lower(name) asc) { _id, name, photo, slug, tags }`,
+    {},
+    { next: { revalidate: 60 } }
+  )
+  return <DivaGallery artists={artists} />
 }

@@ -31,8 +31,18 @@ export const artist = {
       ]
     },
     { name: 'photo', title: 'Photo', type: 'image' },
-    { name: 'genre', title: 'Genre', type: 'string' },
-    { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'name' } 
-}
+    { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'name' }},
+    {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'DJ', value: 'dj' },
+          { title: 'Juonto', value: 'drag' },
+        ]
+      }
+    }
   ]
 }

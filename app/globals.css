@@ -36,3 +36,7 @@ body {
   padding: 7px;
   margin: 4px;
 }
+
+input, textarea {
+  @apply border border-2 border-red-200 m-1 rounded-lg bg-white
+}
