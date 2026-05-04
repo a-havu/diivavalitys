@@ -16,11 +16,11 @@ export default function Header() {
             </Link>
             </div>
             <nav className="flex flex-row justify-center align-baseline gap-6 p-6">
-                <Link href="/diivat" className="p-2">DIIVAT</Link>
-                <Link href="/palvelut" className="p-2">PALVELUT</Link>
-                <Link href="/ajankohtaista" className="p-2">AJANKOHTAISTA</Link>
+                <Link href="/diivat" className="p-2 text-lg font-bold">DIIVAT</Link>
+                <Link href="/palvelut" className="p-2 text-lg font-bold">PALVELUT</Link>
+                <Link href="/ajankohtaista" className="p-2 text-lg font-bold">AJANKOHTAISTA</Link>
                 <Link href="/otayhteytta">
-                <button className="bg-white text-black p-2 rounded-xl hover:cursor-pointer">
+                <button className="bg-white text-black text-lg font-bold p-2 rounded-xl hover:cursor-pointer">
                     OTA YHTEYTTÄ</button>
                 </Link>
             </nav>

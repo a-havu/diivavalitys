@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Footer() {
     return(
-        <footer className="bg-[#CE0074] p-5">
+        <footer className="bg-[#CE0074] p-5 text-xs">
             <div className="flex flex-col items-center text-white">
             <Image
             src="/valk-logo.png"

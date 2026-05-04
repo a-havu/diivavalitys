@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/main/Header";
 import Footer from "@/components/main/Footer"
+import { Karla } from 'next/font/google'
+import '@fontsource/cal-sans'
 
-const figtree = Figtree({
-  variable: "--font-figtree",
-  subsets: ["latin"],
-});
+const karla = Karla({
+  subsets: ['latin'],
+  variable: '--font-karla',
+})
 
 export const metadata: Metadata = {
   title: {
@@ -23,11 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${figtree.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en">
+      <body className={`${karla.variable} h-full antialiased`}>
   <header>
     <Header />
   </header>

@@ -3,7 +3,7 @@ import Link from "next/link"
 export default function EventCard({ name, date, link }) {
   return link ? (
     <Link href={link}>
-      <div className="flex flex-row bg-[#CE0074] mt-3 mb-3 p-4 text-white">
+      <div className="flex flex-row bg-[#CE0074] mt-3 mb-3 p-4 gap-5 text-white">
         <h2 className="text-2xl">{new Date(date).toLocaleDateString('fi-FI', {
             day: 'numeric',
             month: 'short',

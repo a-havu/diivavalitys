@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import { client } from '@/lib/sanity'
 
@@ -12,8 +11,8 @@ export default function NewsCard({name, oneliner, photo}) {
             height={0}
             />
             <div>
-            <h1>{name}</h1>
-            <h3>{oneliner}</h3>
+            <h1 className="text-lg">{name}</h1>
+            <p className="text-sm">{oneliner}</p>
             </div>
         </div>
     )
