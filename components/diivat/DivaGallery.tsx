@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import DivaCard from './DivaCard'
 
-const ALL_TAGS = ['DJ', 'Juonto']
+const ALL_TAGS = ['dj', 'Juonto']
 
 export default function DivaGallery({ artists }: { artists: any[] }) {
   const [activeTag, setActiveTag] = useState<string | null>(null)
@@ -11,7 +11,7 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
   const filtered = activeTag
     ? artists.filter(artist => artist.tags?.includes(activeTag))
     : artists
-
+console.log('artists:', JSON.stringify(artists.map(a => ({ name: a.name, tags: a.tags }))))
   return (
     <div>
       <div className="flex justify-center gap-2 m-8">
@@ -19,20 +19,20 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
           onClick={() => setActiveTag(null)}
            className={`px-4 py-2 rounded-sm border transition-colors ${
           activeTag === null
-        ? 'bg-black text-white border-black'
-        : 'bg-transparent text-black border-black hover:bg-black hover:text-white'
+        ? 'bg-[#CE0074] text-white border-[#CE0074]'
+        : 'bg-transparent text-black border-[#CE0074] hover:bg-[#CE0074] hover:text-white'
         }`}
         >
-          Kaikki
+          KAIKKI
         </button>
         {ALL_TAGS.map(tag => (
           <button
             key={tag}
             onClick={() => setActiveTag(tag)}
              className={`px-4 py-2 rounded-sm border transition-colors ${
-            activeTag === null
-              ? 'bg-black text-white border-black'
-              : 'bg-transparent text-black border-black hover:bg-black hover:text-white'
+            activeTag === tag
+              ? 'bg-[#CE0074] text-white border-[#CE0074]'
+              : 'bg-transparent text-black border-[#CE0074] hover:bg-[#CE0074] hover:text-white'
           }`}
           >
             {tag.toUpperCase()}

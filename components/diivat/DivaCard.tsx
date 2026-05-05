@@ -7,12 +7,11 @@ const urlFor = (source: any) => builder.image(source).width(400).height(400).url
 
 export default function DivaCard({name, photo}: { name: string, photo: any }) {
     return (
-        <div className="flex flex-col">
+        <div className="relative h-50 flex flex-col border items-center">
           <Image
             src={urlFor(photo)}
             alt={name}
-            width={200}
-            height={200}
+            fill
           />
           <h3 className="flex justify-center p-2">{name}</h3>
         </div>
