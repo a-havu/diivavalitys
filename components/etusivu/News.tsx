@@ -1,10 +1,7 @@
 import { client } from '@/lib/sanity'
 import NewsCard from '@/components/etusivu/NewsCard'
-import imageUrlBuilder from "@sanity/image-url";
+import { urlFor } from '@/lib/urlFor'
 import Link from 'next/link';
-
-const builder = imageUrlBuilder(client)
-const urlFor = (source: any) => builder.image(source).width(400).height(400)
 
 export default async function News() {
     const news = await client.fetch(`*[_type == "story"] | order(date desc)`)

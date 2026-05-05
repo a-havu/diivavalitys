@@ -5,7 +5,6 @@ export const event = {
   fields: [
     { name: 'name', title: 'Name', type: 'string' },
     { name: 'description', title: 'Description', type: 'text' },
-    { name: 'genre', title: 'Genre', type: 'string' },
     { name: 'date', title: 'Date', type: 'date' },
     { name: 'artists', title: 'Artists', type: 'string' },
     { name: 'link', title: 'Link', type: 'url' },

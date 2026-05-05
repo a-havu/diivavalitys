@@ -1,23 +1,26 @@
 import Link from "next/link"
 
-export default function EventCard({ name, date, link }) {
+export default function EventCard({ name, date, link, artists }) {
   return link ? (
     <Link href={link}>
-      <div className="flex flex-row bg-[#CE0074] mt-3 mb-3 p-4 gap-5 text-white">
-        <h2 className="text-2xl">{new Date(date).toLocaleDateString('fi-FI', {
-            day: 'numeric',
-            month: 'short',
-            })}</h2>
-        <h2>{name}</h2>
-      </div>
+      <div className="flex flex-row bg-[#CE0074] mt-1 mb-1 p-3 gap-9 text-white items-center">
+  <div className="flex flex-col items-center leading-tight">
+    <span className="text-4xl font-bold">
+      {new Date(date).toLocaleDateString('fi-FI', { day: 'numeric' })}
+    </span>
+    <span className="text-xs uppercase">
+      {new Date(date).toLocaleDateString('en-GB', { month: 'short' })}
+    </span>
+  </div>
+  <div>
+  <h2 className="text-2xl">{name}</h2>
+  <p className="text-xs mt-1">{artists}</p>
+  </div>
+</div>
     </Link>
   ) : (
     <div className="bg-[#CE0074] mb-3 p-4 text-white">
-      <h3>{name}</h3>
-      <h3>{new Date(date).toLocaleDateString('fi-FI', {
-        day: 'numeric',
-        month: 'short',
-        })}</h3>
+      <h2>{name}</h2>
     </div>
   )
 }

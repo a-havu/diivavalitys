@@ -1,10 +1,7 @@
 import { client } from '@/lib/sanity'
-import imageUrlBuilder from '@sanity/image-url'
+import { urlFor } from '@/lib/urlFor'
 import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
-
-const builder = imageUrlBuilder(client)
-const urlFor = (source: any) => builder.image(source).width(400).height(400).url()
 
 export async function generateStaticParams() {
   const artists = await client.fetch(`*[_type == "artist"]{ slug }`)

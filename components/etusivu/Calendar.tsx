@@ -12,6 +12,7 @@ export default async function Calendar() {
           name={event.name}
           date={event.date}
           link={event.link}
+          artists={event.artists}
           />
       ))}
       </div>
