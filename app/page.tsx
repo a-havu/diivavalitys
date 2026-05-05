@@ -5,11 +5,38 @@ import Carousel from "@/components/etusivu/Carousel";
 import Reviews from "@/components/etusivu/Reviews";
 import Logos from "@/components/etusivu/Logos"
 import DivaNameGenerator from "@/components/etusivu/DivaNameGenerator";
+import Grainient from "@/components/Grainient"
 
 export default function HomePage() {
 
 return(
-  <div>
+	<div className="relative">
+		<div className="fixed inset-0 -z-10">
+  <Grainient
+    color1="#f39ece"
+    color2="#ec79ba"
+    color3="#f3e6ff"
+    timeSpeed={0}
+    colorBalance={-0.24}
+    warpStrength={1.95}
+    warpFrequency={1.6}
+    warpSpeed={2}
+    warpAmplitude={50}
+    blendAngle={-138}
+    blendSoftness={0.25}
+    rotationAmount={500}
+    noiseScale={2}
+    grainAmount={0.1}
+    grainScale={2}
+    grainAnimated={false}
+    contrast={1.35}
+    gamma={1}
+    saturation={1.15}
+    centerX={0}
+    centerY={0}
+    zoom={0.9}>
+		</Grainient>
+		</div>
   <div className="h-80"><Carousel /></div>
   <Infosection />
   <Reviews />

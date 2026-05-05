@@ -19,17 +19,20 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   )
 
   return (
-    <div className="flex flex-row p-20">
+	<>
+	<h1 className="flex justify-center text-6xl mt-9">{artist.name.toUpperCase()}</h1>
+    <div className="relative w-full flex flex-row p-10 gap-10">
       <Image
         src={urlFor(artist.photo)}
         alt={artist.name}
-        width={400}
-        height={400}
+        width={600}
+        height={0}
+		className="rounded-lg object-cover w-500"
       />
       <div className="p-5">
-      <h1>{artist.name}</h1>
       <PortableText value={artist.bio} />
       </div>
     </div>
+	</>
   )
 }

@@ -14,7 +14,7 @@ export default async function News() {
             <NewsCard
             name={story.name}
             oneliner={story.oneliner}
-            photo={urlFor(story.photo).url()}
+            photo={urlFor(story.photo)}
             />
         </Link>
             ) : null

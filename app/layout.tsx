@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/main/Header";
 import Footer from "@/components/main/Footer"
-import { Karla } from 'next/font/google'
+import { Karla, Geist } from 'next/font/google'
 import '@fontsource/cal-sans'
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const karla = Karla({
   subsets: ['latin'],
@@ -24,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={`${karla.variable} h-full antialiased`}>
   <header>
     <Header />
