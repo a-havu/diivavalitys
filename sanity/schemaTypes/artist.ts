@@ -30,7 +30,30 @@ export const artist = {
         }
       ]
     },
-    { name: 'photo', title: 'Photo', type: 'image' },
+    {
+      name: 'photos',
+      title: 'Photos',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true, // enables crop/focus UI per image
+          },
+          fields: [
+            {
+              name: 'alt',
+              title: 'Alt text',
+              type: 'string',
+            },
+            // add a caption, credit, etc. here if needed
+          ],
+        },
+      ],
+      options: {
+        layout: 'grid', // shows a grid preview in the Studio
+      },
+    },
     { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'name' }},
     {
       name: 'tags',

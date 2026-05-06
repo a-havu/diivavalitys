@@ -3,4 +3,7 @@ import { client } from '@/lib/sanity'
 
 const builder = createImageUrlBuilder(client)
 
-export const urlFor = (source: any) => builder.image(source).width(400).height(400).url()
+export const urlFor = (source: any) => {
+  if (!source?.asset) return ''
+  return builder.image(source).url()
+}

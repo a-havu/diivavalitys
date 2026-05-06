@@ -43,13 +43,9 @@ console.log('artists:', JSON.stringify(artists.map(a => ({ name: a.name, tags: a
       <div className="grid grid-cols-4 gap-8 p-8">
         {filtered.map(artist => (
           <div key={artist._id}>
-            {artist.slug?.current ? (
               <Link href={`/diivat/${artist.slug.current}`}>
-                <DivaCard name={artist.name} photo={artist.photo} />
+                <DivaCard name={artist.name} photo={artist.photos?.[0] ?? null} />
               </Link>
-            ) : (
-              <DivaCard name={artist.name} photo={artist.photo} />
-            )}
           </div>
         ))}
       </div>

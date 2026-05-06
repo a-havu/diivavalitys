@@ -13,10 +13,10 @@ return(
 	<div className="relative">
 		<div className="fixed inset-0 -z-10">
   <Grainient
-    color1="#f39ece"
-    color2="#ec79ba"
-    color3="#f3e6ff"
-    timeSpeed={0}
+    color1="F2D4EC"
+    color2="#F8CEE6"
+    color3="#ce0074"
+    timeSpeed={0.5}
     colorBalance={-0.24}
     warpStrength={1.95}
     warpFrequency={1.6}
