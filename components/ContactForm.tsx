@@ -32,14 +32,14 @@ export default function ContactForm() {
     
     return(
         <div className="flex flex-col w-100 bg-[#CE0074] p-4 rounded-lg">
-            <input
-            placeholder="Nimi"
+            <p>Nimesi *</p><input
+            placeholder="Homo Minogue"
             className="placeholder:text-[#CE0074] placeholder:text-sm p-1"
             {...register('name', { required: 'Nimi tarvitaan' })}
             />
             {errors.name && <p className="text-white text-xs ml-1">{errors.name.message}</p>}
 
-            <input
+          <input
             placeholder="Sähköposti"
             className="placeholder:text-[#CE0074] placeholder:text-sm p-1"
             {...register('email', {
@@ -50,6 +50,22 @@ export default function ContactForm() {
                 }
             })}
             />
+
+            <input
+            placeholder="Tapahtuman ajankohta"
+            className="placeholder:text-[#CE0074] placeholder:text-sm p-1"
+            {...register('name', { required: 'Nimi tarvitaan' })}
+            />
+            {errors.name && <p className="text-white text-xs ml-1">{errors.name.message}</p>}
+
+            <p>Budjetti</p><input
+            placeholder="jos tiedossa/arvio riittää"
+            className="placeholder:text-[#CE0074] placeholder:text-sm p-1"
+            {...register('name', { required: 'Nimi tarvitaan' })}
+            />
+            {errors.name && <p className="text-white text-xs ml-1">{errors.name.message}</p>}
+
+
             {errors.email && <p className="text-white text-xs ml-1">{errors.email.message}</p>}
 
             <textarea

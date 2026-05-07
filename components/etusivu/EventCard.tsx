@@ -9,7 +9,7 @@ export default function EventCard({ name, date, link, artists }) {
       {new Date(date).toLocaleDateString('fi-FI', { day: 'numeric' })}
     </span>
     <span className="text-xs uppercase">
-      {new Date(date).toLocaleDateString('en-GB', { month: 'short' })}
+      {new Date(date).toLocaleDateString('fi-FI', { month: 'short' })}
     </span>
   </div>
   <div>
@@ -25,7 +25,7 @@ export default function EventCard({ name, date, link, artists }) {
 		{new Date(date).toLocaleDateString('fi-FI', { day: 'numeric' })}
 		</span>
 		<span className="text-xs uppercase">
-		{new Date(date).toLocaleDateString('en-GB', { month: 'short' })}
+		{new Date(date).toLocaleDateString('fi-FI', { month: 'short' })}
 		</span>
 	</div>
 	<div>

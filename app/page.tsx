@@ -16,7 +16,7 @@ return(
     color1="F2D4EC"
     color2="#F8CEE6"
     color3="#ce0074"
-    timeSpeed={0.5}
+    timeSpeed={0.05}
     colorBalance={-0.24}
     warpStrength={1.95}
     warpFrequency={1.6}
@@ -45,7 +45,6 @@ return(
   <div className="flex-1"><News /></div>
   </div>
   <div className="flex justify-center">
-  <DivaNameGenerator />
   </div>
   <Logos />
   </div>

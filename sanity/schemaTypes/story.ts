@@ -4,6 +4,7 @@ export const story = {
   type: 'document',
   fields: [
     { name: 'name', title: 'Name', type: 'string' },
+    { name: 'etusivulle', title: 'Etusivulle', type: 'boolean' },
     { name: 'photo', title: 'Photo', type: 'image' },
     { name: 'oneliner', title: 'Oneliner', type: 'string' },
     { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'name' }},

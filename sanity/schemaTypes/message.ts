@@ -7,5 +7,7 @@ export const message = {
     { name: 'email', title: 'Email', type: 'string' },
     { name: 'message', title: 'Message', type: 'text' },
     { name: 'createdAt', title: 'Received At', type: 'datetime' },
+    { name: 'date', title: 'Date', type: 'text' },
+    { name: 'budget', title: 'Budget', type: 'text' },
   ]
 }

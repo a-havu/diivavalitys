@@ -63,7 +63,9 @@ export const artist = {
       options: {
         list: [
           { title: 'DJ', value: 'dj' },
-          { title: 'Juonto', value: 'Juonto' },
+          { title: 'Juontaja', value: 'juontaja' },
+          { title: 'Drag', value: 'drag' },
+          { title: 'Laulaja', value: 'laulaja' },
         ]
       }
     }

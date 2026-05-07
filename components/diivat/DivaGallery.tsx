@@ -3,7 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import DivaCard from './DivaCard'
 
-const ALL_TAGS = ['dj', 'Juonto']
+const ALL_TAGS = ['drag', 'dj', 'juontaja', 'laulaja']
 
 export default function DivaGallery({ artists }: { artists: any[] }) {
   const [activeTag, setActiveTag] = useState<string | null>(null)

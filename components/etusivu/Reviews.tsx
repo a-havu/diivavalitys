@@ -1,3 +1,5 @@
+import DivaNameGenerator from "./DivaNameGenerator"
+
 export default function Reviews() {
     return(
         <div className="flex flex-row justify-center p-10 gap-10 border border-[#CE0074]">
@@ -17,6 +19,7 @@ export default function Reviews() {
         <h2>"Kyllä kannatti lähteä nämä diivat ovat taivaallisia!!"</h2>
         <p className="text-red-400 text-sm">meitsi meikäläinen</p>
         </div>
+        <DivaNameGenerator />
         </div>
     )
 }
