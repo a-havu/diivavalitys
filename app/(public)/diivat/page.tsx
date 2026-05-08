@@ -7,6 +7,7 @@ export default async function DivaPage() {
 		_id,
 		name,
 		slug,
+		tags,
 		photos[]{
 			_key,
 			asset->,

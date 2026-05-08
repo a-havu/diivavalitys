@@ -1,4 +1,4 @@
-import Services from "@/components/Services";
+import Services from "@/components/services/Services";
 import Grainient from "@/components/Grainient"
 
 export default function PalvelutPage() {

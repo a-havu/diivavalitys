@@ -11,7 +11,7 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
   const filtered = activeTag
     ? artists.filter(artist => artist.tags?.includes(activeTag))
     : artists
-console.log('artists:', JSON.stringify(artists.map(a => ({ name: a.name, tags: a.tags }))))
+  console.log('artists:', JSON.stringify(artists.map(a => ({ name: a.name, tags: a.tags }))))
   return (
     <div>
       <div className="flex justify-center gap-2 m-8">
@@ -44,7 +44,7 @@ console.log('artists:', JSON.stringify(artists.map(a => ({ name: a.name, tags: a
         {filtered.map(artist => (
           <div key={artist._id}>
               <Link href={`/diivat/${artist.slug.current}`}>
-                <DivaCard name={artist.name} photo={artist.photos?.[0] ?? null} />
+                <DivaCard name={artist.name} photo={artist.photos[0]} />
               </Link>
           </div>
         ))}

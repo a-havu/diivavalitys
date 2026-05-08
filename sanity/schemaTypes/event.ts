@@ -6,7 +6,14 @@ export const event = {
     { name: 'name', title: 'Name', type: 'string' },
     { name: 'etusivulle', title: 'Etusivulle', type: 'boolean' },
     { name: 'date', title: 'Date', type: 'date' },
-    { name: 'artists', title: 'Artists', type: 'string' },
+    { name: 'artists', title: 'Divas', type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'artist' }]
+        }
+      ]
+     },
     { name: 'link', title: 'Link', type: 'url' },
   ]
 

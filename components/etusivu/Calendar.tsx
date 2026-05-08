@@ -2,7 +2,15 @@ import { client } from '@/lib/sanity'
 import EventCard from '@/components/etusivu/EventCard'
 
 export default async function Calendar() {
-    const events = await client.fetch(`*[_type == "event"] | order(name asc)`)
+    const events = await client.fetch(
+    `*[_type == "event"] | order(date asc) {
+        _id,
+        name,
+        date,
+        link,
+        artists[]-> { _id, name, slug }
+    }`
+    )
     return(
         <div>
         <h1 className="text-2xl">Näe ja koe diivat</h1>

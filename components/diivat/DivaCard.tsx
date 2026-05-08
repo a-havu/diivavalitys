@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { urlFor } from '@/lib/urlFor'
-import { client } from "@/lib/sanity";
 
 export default function DivaCard({name, photo}: { name: string, photo: any }) {
     return (
