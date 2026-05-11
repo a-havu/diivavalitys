@@ -1,18 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import ClickSpark from "@/components/ClickSpark"
 
 export default function Header() {
     return(
-        <ClickSpark
-    sparkColor="#ffffff"
-    sparkSize={7}
-    sparkRadius={18}
-    sparkCount={8}
-    duration={600}
-    easing="ease-out"
-    extraScale={1.5}
-  >
 	<header className="bg-[#CE0074] text-white">
             <div className="flex justify-center p-4">
             <Link href="/">
@@ -29,12 +19,10 @@ export default function Header() {
                 <Link href="/diivat" className="p-2 text-lg font-bold">DIIVAT</Link>
                 <Link href="/palvelut" className="p-2 text-lg font-bold">PALVELUT</Link>
                 <Link href="/ajankohtaista" className="p-2 text-lg font-bold">AJANKOHTAISTA</Link>
-                <Link href="/otayhteytta">
-                <button className="bg-white text-black text-lg font-bold p-2 w-42 rounded-xl hover:cursor-pointer">
-                    OTA YHTEYTTÄ</button>
+                <Link href="/otayhteytta" className="bg-white text-black text-center text-lg font-bold p-2 w-42 rounded-xl hover:cursor-pointer">
+                    OTA YHTEYTTÄ
                 </Link>
             </nav>
         </header>
-		</ClickSpark>
     );
 }

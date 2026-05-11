@@ -6,6 +6,7 @@ import Reviews from "@/components/etusivu/Reviews";
 import Logos from "@/components/etusivu/Logos"
 import DivaNameGenerator from "@/components/etusivu/DivaNameGenerator";
 import Grainient from "@/components/Grainient"
+import Link from "next/link";
 
 export default function HomePage() {
 
@@ -40,11 +41,21 @@ return(
   <div className="h-80"><Carousel /></div>
   <Infosection />
   <Reviews />
-  <div className="flex flex-row m-20 gap-20">
-  <div className="flex-1"><Calendar /></div>
-  <div className="flex-1"><News /></div>
-  </div>
-  <div className="flex justify-center">
+  <div className="flex flex-col mt-15 items-center">
+  <div className="flex flex-row gap-20 mb-6">
+  <div className="flex-1">
+    <Calendar
+    frontpage={true}
+    />
+    </div>
+  <div className="flex-1">
+    <News
+    frontpage={false}
+    />
+    </div>
+    </div>
+    <Link href="/ajankohtaista" className="bg-[#CE0074] text-center text-white rounded-lg p-4 mb-5">Kaikki ajankohtaiset
+    </Link>
   </div>
   <Logos />
   </div>

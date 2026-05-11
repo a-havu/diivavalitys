@@ -5,6 +5,7 @@ import Footer from "@/components/main/Footer"
 import { Karla, Geist } from 'next/font/google'
 import '@fontsource/cal-sans'
 import { cn } from "@/lib/utils";
+import ClickSpark from "@/components/ClickSpark";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
@@ -29,6 +30,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("font-sans", geist.variable)}>
       <body className={`${karla.variable} h-full antialiased`}>
+        <ClickSpark
+      sparkColor="#ffffff"
+      sparkSize={7}
+      sparkRadius={18}
+      sparkCount={8}
+      duration={600}
+      easing="ease-out"
+      extraScale={1.5}
+    >
   <header>
     <Header />
   </header>
@@ -38,6 +48,7 @@ export default function RootLayout({
   <footer>
     <Footer />
   </footer>
+  </ClickSpark>
 </body>
     </html>
   );

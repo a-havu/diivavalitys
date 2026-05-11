@@ -1,19 +1,22 @@
 import Image from 'next/image'
 import { client } from '@/lib/sanity'
 
-export default function NewsCard({name, oneliner, photo}) {
-    return (
-        <div className="flex flex-row gap-6 mt-3 mb-3">
-            <Image
-            src={photo}
-            alt={name}
-            width={100}
-            height={0}
-            />
-            <div>
-            <h1 className="text-lg">{name}</h1>
-            <p className="text-sm">{oneliner}</p>
-            </div>
-        </div>
-    )
+export default function NewsCard({name, oneliner, photo, date}) {
+  return (
+    <div className="relative flex flex-row gap-6 mt-3 mb-3 w-150">
+      <div className="relative w-24 h-24 shrink-0">
+        <Image
+          src={photo}
+          alt={name}
+          fill
+          className="object-cover rounded"
+        />
+      </div>
+      <div>
+        <h1 className="text-lg">{name}</h1>
+        <p className="text-sm">{oneliner}</p>
+        <p className="text-xs mt-1">{date}</p>
+      </div>
+    </div>
+  )
 }
