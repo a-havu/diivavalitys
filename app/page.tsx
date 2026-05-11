@@ -44,6 +44,7 @@ return(
   <div className="flex flex-col mt-15 items-center">
   <div className="flex flex-row gap-20 mb-6">
   <div className="flex-1">
+    <h1 className="text-2xl">Näe ja koe diivat</h1>
     <Calendar
     frontpage={true}
     />

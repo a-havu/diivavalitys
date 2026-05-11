@@ -35,9 +35,11 @@ export default function NewsPage () {
         
         <h1 className="text-4xl">AJANKOHTAISTA</h1>
         <div className="flex flex-row gap-18">
+            <div><h1 className="text-2xl">Tulevat keikat</h1>
         <Calendar
         frontpage={false}
         />
+        </div>
         <News
         frontpage={false} />
         </div>

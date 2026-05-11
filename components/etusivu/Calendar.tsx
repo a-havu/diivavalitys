@@ -18,7 +18,6 @@ export default async function Calendar({frontpage}: { frontpage?: boolean }) {
 
     return(
         <div>
-        <h1 className="text-2xl">Näe ja koe diivat</h1>
         {events
         .filter(event => new Date(event.date) >= today)
         .filter(event => !frontpage || event.etusivulle)

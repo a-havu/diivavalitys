@@ -18,25 +18,28 @@ export default function Footer() {
             <p>Y-tunnus: 3513385-8</p>
             </div>
             <div className="flex flex-row p-4 gap-3">
-                <Link href=""><Image
+                <Link href="">
+                <Image
                 src="/fb.png"
                 alt="instagram"
                 width={25}
-                height={0}
+                height={25}
                 />
                 </Link>
-                <Link href=""><Image
+                <Link href="">
+                <Image
                 src="/insta.png"
                 alt="instagram"
                 width={25}
-                height={0}
+                height={25}
                 />
                 </Link>
-                <Link href=""><Image
+                <Link href="">
+                <Image
                 src="/tiktok.png"
                 alt="instagram"
                 width={25}
-                height={0}
+                height={25}
                 />
                 </Link>
             </div>
