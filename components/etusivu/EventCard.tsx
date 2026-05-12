@@ -13,7 +13,7 @@ export default function EventCard({ name, date, link, artists }) {
     </span>
   </div>
   <div>
-  <h2 className="text-2xl font-bold">{name}</h2>
+  <h2 className="text-2xl font-bold">{name.toUpperCase()}</h2>
   <p className="text-xs mt-1">
     {artists?.map((artist: any) => artist.name).join(', ')}
   </p>
@@ -31,7 +31,7 @@ export default function EventCard({ name, date, link, artists }) {
 		</span>
 	</div>
 	<div>
-	<h2 className="l-20 text-2xl font-bold">{name}</h2>
+	<h2 className="l-20 text-2xl font-bold">{name.toUpperCase()}</h2>
 	<p className="text-xs mt-1">
     {artists?.map((artist: any) => artist.name).join(', ')}
   </p>

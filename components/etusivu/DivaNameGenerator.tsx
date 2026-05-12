@@ -22,7 +22,7 @@ export default function DivaNameGenerator() {
         setName(`${first} ${last}`)
      }
      return(
-        <div className="ml-10">
+        <div className="md:ml-10">
             <div>
             <button
             onClick={generate}

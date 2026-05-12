@@ -17,7 +17,7 @@ export default function ServiceCard( {name, photo, description}: {name: string, 
             src={urlFor(photo)}
             alt={name}
             width={200}
-            height={100}
+            height={200}
             className="object-none"
             />
             {open &&

@@ -1,4 +1,5 @@
 "use client";
+
 import { ImageGallery } from "react-image-grid-gallery";
 import "react-image-grid-gallery/style.css";
 import { urlFor } from "@/lib/urlFor";

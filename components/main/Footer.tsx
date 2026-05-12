@@ -9,13 +9,14 @@ export default function Footer() {
             src="/valk-logo.png"
             alt="logo"
             width={150}
-            height={0}
+            height={150}
             loading="eager"
             />
             <p className="mt-6">info@diivavalitys.fi</p>
             <p>+358 45 7831 0826</p>
             <p className="mt-4">Diivakonserni Oy</p>
-            <p>Y-tunnus: 3513385-8</p>
+            <p className="mb-5">Y-tunnus: 3513385-8</p>
+            <Link href="/tietosuojaseloste">Tietosuojaseloste</Link>
             </div>
             <div className="flex flex-row p-4 gap-3">
                 <Link href="">

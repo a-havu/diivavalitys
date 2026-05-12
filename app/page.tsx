@@ -17,7 +17,7 @@ return(
     color1="F2D4EC"
     color2="#F8CEE6"
     color3="#ce0074"
-    timeSpeed={0.05}
+    timeSpeed={0.5}
     colorBalance={-0.24}
     warpStrength={1.95}
     warpFrequency={1.6}
@@ -41,21 +41,22 @@ return(
   <div className="h-80"><Carousel /></div>
   <Infosection />
   <Reviews />
-  <div className="flex flex-col mt-15 items-center">
-  <div className="flex flex-row gap-20 mb-6">
-  <div className="flex-1">
-    <h1 className="text-2xl">Näe ja koe diivat</h1>
+  <div className="md:flex flex-col md:mt-15 items-center p-3">
+  <div className="md:flex flex-col md:flex-row md:gap-20 mb-6">
+  <div className="md:flex-1 mt-3 mb-4">
+    <h1 className="flex text-2xl md:justify-start justify-center">Näe ja koe diivat</h1>
     <Calendar
     frontpage={true}
     />
     </div>
-  <div className="flex-1">
+  <div className="md:flex-1 mt-3 mb-4">
     <News
     frontpage={false}
     />
     </div>
     </div>
-    <Link href="/ajankohtaista" className="bg-[#CE0074] text-center text-white rounded-lg p-4 mb-5">Kaikki ajankohtaiset
+    <Link href="/ajankohtaista"
+    className="flex justify-center bg-[#CE0074] text-center text-white rounded-lg p-4 mb-5 m-10">Kaikki ajankohtaiset
     </Link>
   </div>
   <Logos />

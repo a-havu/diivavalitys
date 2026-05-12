@@ -46,7 +46,7 @@ export const artist = {
               title: 'Alt text',
               type: 'string',
             },
-            // add a caption, credit, etc. here if needed
+            {name: 'credit', title: 'Photo credit', type: 'string'}
           ],
         },
       ],

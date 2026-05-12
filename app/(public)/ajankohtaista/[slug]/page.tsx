@@ -26,7 +26,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
     color1="F2D4EC"
     color2="#F8CEE6"
     color3="#ce0074"
-    timeSpeed={0.2}
+    timeSpeed={0.5}
     colorBalance={-0.24}
     warpStrength={1.95}
     warpFrequency={1.6}
