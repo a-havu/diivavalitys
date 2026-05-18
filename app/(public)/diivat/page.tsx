@@ -11,12 +11,13 @@ export default async function DivaPage() {
 		photos[]{
 			_key,
 			asset->,
-			alt,
-			hotspot
+			hotspot,
+			crop,
+			alt
 		}
 		}`,
     {},
-    { next: { revalidate: 60 } }
+    { next: { revalidate: 60 } },
   )
   return <DivaGallery artists={artists} />
 }
