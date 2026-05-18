@@ -3,7 +3,7 @@ import DivaGallery from '@/components/diivat/DivaGallery'
 
 export default async function DivaPage() {
   const artists = await client.fetch(
-			`*[_type == "artist"]{
+			`*[_type == "artist"] | order(name asc) {
 		_id,
 		name,
 		slug,

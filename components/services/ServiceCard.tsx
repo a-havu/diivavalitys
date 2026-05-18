@@ -2,27 +2,25 @@
 
 import Image from "next/image"
 import { urlFor } from "@/lib/urlFor"
-import { useState } from 'react'
 
 export default function ServiceCard( {name, photo, description}: {name: string, photo: any, description: string}) {
-    const [open, setOpen] = useState(false)
     
     return(
         <div
-        className="w-100 ml-30 mr-30 cursor-pointer mb-10"
-        onClick={() => setOpen(!open)}
+        className="rounded-lg bg-white w-90 md:w-120 m-5 cursor-pointer md:mb-10 border-2 border-[#ce0074] hover:shadow-lg shadow-[#CE0074]"
         >
-            <h2>{name}</h2>
+            <div className="relative min-h-[200px] rounded-lg">
+            <span className="z-40 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+            <h2 className="z-40 text-3xl text-white flex justify-center">{name}</h2>
+            </span>
             <Image
             src={urlFor(photo)}
             alt={name}
-            width={200}
-            height={200}
-            className="object-none"
+            fill
+            className="object-cover z-0 rounded-md h-auto"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-            {open &&
-            <p className={`transition-all duration-300 overflow-hidden ${open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                {description}</p>}
+            </div>
             </div>
     )
 }

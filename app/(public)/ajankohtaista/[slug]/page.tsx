@@ -52,7 +52,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         alt={story.name}
         width={300}
         height={300}
-        className="object-contain rounded-md flex-1"
+        className="object-contain rounded-md flex-1 h-auto"
       />
       <div className="p-5 flex-1">
       <h1 className="text-2xl mb-1">{story.name}</h1>

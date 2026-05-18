@@ -7,7 +7,9 @@ export default function Carousel() {
         src="/hom.jpg"
         alt="logo"
         fill
-        className="object-cover"
+        className="object-cover h-auto"
+        loading="eager"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         </div>
     );

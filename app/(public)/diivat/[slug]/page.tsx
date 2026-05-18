@@ -69,8 +69,9 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
     src={urlFor(artist.photos[0])}
     alt={artist.name}
     fill
-    className="object-cover"
+    className="object-cover h-auto"
     style={{ zIndex: -10 }}
+    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     />
 	<span className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
   <h1 className="md:text-9xl text-5xl text-shadow-lg/300 text-white text-center">

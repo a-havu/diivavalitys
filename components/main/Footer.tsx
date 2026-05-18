@@ -10,7 +10,7 @@ export default function Footer() {
             alt="logo"
             width={150}
             height={150}
-            loading="eager"
+            className="h-auto"
             />
             <p className="mt-6">info@diivavalitys.fi</p>
             <p>+358 45 7831 0826</p>
@@ -25,6 +25,7 @@ export default function Footer() {
                 alt="instagram"
                 width={25}
                 height={25}
+                className="h-auto"
                 />
                 </Link>
                 <Link href="">
@@ -33,6 +34,7 @@ export default function Footer() {
                 alt="instagram"
                 width={25}
                 height={25}
+                className="h-auto"
                 />
                 </Link>
                 <Link href="">
@@ -41,6 +43,7 @@ export default function Footer() {
                 alt="instagram"
                 width={25}
                 height={25}
+                className="h-auto"
                 />
                 </Link>
             </div>

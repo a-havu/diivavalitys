@@ -15,8 +15,8 @@ export default function Header() {
             alt="diivavälitys logo"
             width={200}
             height={200}
-            loading="eager"
             className="w-20 md:w-48"
+            loading="eager"
             />
             </Link>
 

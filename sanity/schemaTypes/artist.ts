@@ -38,7 +38,7 @@ export const artist = {
         {
           type: 'image',
           options: {
-            hotspot: true, // enables crop/focus UI per image
+            hotspot: true,
           },
           fields: [
             {
@@ -51,7 +51,7 @@ export const artist = {
         },
       ],
       options: {
-        layout: 'grid', // shows a grid preview in the Studio
+        layout: 'grid',
       },
     },
     { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'name' }},

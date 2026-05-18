@@ -13,13 +13,13 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
     : artists
   return (
     <div>
-      <div className="md:flex jus-center gap-2 m-8">
+      <div className="md:flex md:justify-center gap-2 m-8 md:ml-0 ml-16">
         <button
           onClick={() => setActiveTag(null)}
            className={`px-4 py-2 rounded-sm border transition-colors ${
           activeTag === null
         ? 'bg-[#CE0074] text-white border-[#CE0074] m-2'
-        : 'bg-transparent text-black border-[#CE0074] hover:bg-[#CE0074] hover:text-white m-5'
+        : 'bg-transparent text-black border-[#CE0074] hover:bg-[#CE0074] hover:text-white m-2'
         }`}
         >
           KAIKKI

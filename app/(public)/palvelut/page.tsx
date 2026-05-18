@@ -31,7 +31,7 @@ export default function PalvelutPage() {
 			</Grainient>
 			</div>
 		<div className="flex flex-col items-center">
-		<h1 className="text-3xl p-4">PALVELUT</h1>
+		<h1 className="text-4xl p-4">PALVELUT</h1>
 		<Services />
 		</div>
 		</div>

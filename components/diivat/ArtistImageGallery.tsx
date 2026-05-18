@@ -8,7 +8,7 @@ export default function ArtistImageGallery({ photos }: { photos: any[] }) {
   const imagesArray = photos?.map((photo) => ({
     id: photo._key,
     alt: photo.alt || "",
-    caption: photo.alt || "",
+    caption: photo.credit || "",
     src: urlFor(photo),
   })) ?? [];
 

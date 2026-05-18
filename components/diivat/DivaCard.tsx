@@ -11,7 +11,8 @@ export default function DivaCard({name, photo}: { name: string, photo: any }) {
             src={urlFor(photo)}
             alt={name}
             fill
-            className="object-cover"
+            className="object-cover h-auto"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           </div>
           <div>
