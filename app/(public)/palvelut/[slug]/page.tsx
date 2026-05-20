@@ -19,7 +19,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   )
 
     return(
-        <div className="relative flex flex-row gap-10 p-20">
+        <div className="relative flex flex-col md:flex-row gap-5 md:gap-10 p-5 md:p-20 border-2 border-[#ce0074] rounded-lg bg-white/50 md:m-10">
         <div className="fixed inset-0 -z-10">
         <Grainient
         color1="F2D4EC"
@@ -55,7 +55,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div>
-            <h2 className="text-2xl">{service.name}</h2>
+            <h2 className="flex justify-center mb-2 text-3xl">{service.name}</h2>
             <p>{service.description}</p>
         </div>
         </div>

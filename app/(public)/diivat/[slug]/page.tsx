@@ -83,11 +83,11 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   </h1>
   </span>
   </div>
-    <div className="flex flex-col md:flex-row ml-5 mr-5 md:ml-30 md:mr-30 gap-4">
+    <div className="border-2 border-[#ce0074] p-4 rounded-lg bg-white/50 flex flex-col md:flex-row ml-5 mr-5 md:ml-30 md:mr-30 gap-4">
 	<div className="columns-2 md:columns-2 flex-1 gap-1">
 		<ArtistImageGallery photos={artist.photos} />
 		</div>
-      <div className="flex-1">
+      <div className="flex-1 text-lg">
       <PortableText value={artist.bio} />
       </div>
 	  </div>
