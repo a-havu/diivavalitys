@@ -12,6 +12,18 @@ export default function HomePage() {
 
 return(
 	<div className="relative">
+		<style>
+			{`
+          html, body, *, button, a, input,
+          .disabled, a:disabled, input:disabled {
+            cursor: url('/cursor.png'), auto;
+          }
+
+          button:hover, a:hover, input:hover, .hover:hover {
+            cursor: url('/pointer.png'), auto;
+          }
+			`}
+		</style>
 		<div className="fixed inset-0 -z-10">
   <Grainient
     color1="F2D4EC"
@@ -38,11 +50,12 @@ return(
     zoom={0.9}>
 		</Grainient>
 		</div>
-  <div className="h-80"><Carousel /></div>
+  <div className="h-120">
+	<Carousel /></div>
   <Infosection />
   <Reviews />
   <div className="md:flex flex-col md:mt-15 items-center p-3">
-  <div className="md:flex flex-col md:flex-row md:gap-20 mb-6">
+  <div className="md:flex flex-col md:flex-row md:gap-10 md:m-10">
   <div className="md:flex-1 mt-3 mb-4">
     <h1 className="flex text-2xl md:justify-start justify-center">Näe ja koe diivat</h1>
     <Calendar
@@ -56,7 +69,7 @@ return(
     </div>
     </div>
     <Link href="/ajankohtaista"
-    className="flex justify-center bg-[#CE0074] text-center text-white rounded-lg p-4 mb-5 m-10">Kaikki ajankohtaiset
+    className="flex justify-center bg-[#CE0074] text-center text-white rounded-lg p-4 mb-5">Kaikki ajankohtaiset
     </Link>
   </div>
   <Logos />
