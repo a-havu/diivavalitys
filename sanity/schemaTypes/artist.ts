@@ -1,5 +1,3 @@
-import { HooksClientContext } from "next/dist/server/route-modules/pages/vendored/contexts/entrypoints";
-
 export const artist = {
   name: 'artist',
   title: 'Artist',
