@@ -1,3 +1,5 @@
+import { HooksClientContext } from "next/dist/server/route-modules/pages/vendored/contexts/entrypoints";
+
 export const artist = {
   name: 'artist',
   title: 'Artist',
@@ -37,16 +39,10 @@ export const artist = {
       of: [
         {
           type: 'image',
-          options: {
-            hotspot: true,
-          },
+          options: { hotspot: true },
           fields: [
-            {
-              name: 'alt',
-              title: 'Alt text',
-              type: 'string',
-            },
-            {name: 'credit', title: 'Photo credit', type: 'string'}
+            { name: 'alt', title: 'Alt text', type: 'string' },
+            { name: 'credit', title: 'Photo credit', type: 'string'}
           ],
         },
       ],
@@ -68,6 +64,16 @@ export const artist = {
           { title: 'Laulaja', value: 'laulaja' },
         ]
       }
+    },
+    {
+      name: 'links',
+      title: 'Links',
+      type: 'array',
+      of: [{ type: 'object',
+        options: [
+          { name: 'type', title: 'Link type', type: 'string'} HOX
+        ]
+       }],
     }
   ]
 }
