@@ -19,7 +19,7 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
            className={`px-4 py-2 rounded-sm border transition-colors ${
           activeTag === null
         ? 'bg-[#CE0074] text-white border-[#CE0074] m-2'
-        : 'bg-transparent text-black border-[#CE0074] hover:bg-[#CE0074] hover:text-white m-2'
+        : 'bg-white/50 text-black border-[#CE0074] hover:bg-[#CE0074] hover:text-white m-2'
         }`}
         >
           KAIKKI
@@ -31,7 +31,7 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
              className={`px-4 py-2 rounded-sm border transition-colors ${
             activeTag === tag
               ? 'bg-[#CE0074] text-white border-[#CE0074] m-2'
-              : 'bg-transparent text-black border-[#CE0074] m-2 hover:bg-[#CE0074] hover:text-white'
+              : 'bg-white/50 text-black border-[#CE0074] m-2 hover:bg-[#CE0074] hover:text-white'
           }`}
           >
             {tag.toUpperCase()}
@@ -39,7 +39,7 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
         ))}
       </div>
 
-      <div className="grid md:grid-cols-4 grid-cols-2 gap-8 p-8">
+      <div className="grid md:grid-cols-4 md:grid-cols-2 gap-1 md:gap-8 p-8">
         {filtered.map(artist => (
           <div key={artist._id}>
               <Link href={`/diivat/${artist.slug.current}`}>

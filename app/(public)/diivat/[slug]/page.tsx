@@ -35,6 +35,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
       today: new Date().toISOString()
      }
   )
+  const hotspot = artist.photos[0]?.hotspot
 
   return (
 	<div className="relative flex flex-col items-center">
@@ -65,25 +66,28 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
 			</Grainient>
 			</div>
   <div className="relative w-full h-50 md:h-100 mb-10">
-    <Image
-    src={urlFor(artist.photos[0])}
-    alt={artist.name}
-    fill
-    className="object-cover h-auto"
-    style={{ zIndex: -10 }}
-    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-    />
+	<Image
+	src={urlFor(artist.photos[0])}
+	alt={artist.name}
+	fill
+	className="object-cover"
+	style={{ 
+		zIndex: -10,
+		objectPosition: hotspot ? `${hotspot.x * 100}% ${hotspot.y * 100}%` : 'center'
+	}}
+	sizes="100vw"
+	/>
 	<span className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
   <h1 className="md:text-9xl text-5xl text-shadow-lg/300 text-white text-center">
   {artist.name.toUpperCase()}
   </h1>
   </span>
   </div>
-    <div className="flex flex-col md:flex-row ml-5 mr-5 md:ml-30 md:mr-30 gap-4">
+    <div className="border-2 border-[#ce0074] p-4 rounded-lg bg-white/50 flex flex-col md:flex-row ml-5 mr-5 md:ml-30 md:mr-30 gap-4">
 	<div className="columns-2 md:columns-2 flex-1 gap-1">
 		<ArtistImageGallery photos={artist.photos} />
 		</div>
-      <div className="flex-1">
+      <div className="flex-1 text-lg">
       <PortableText value={artist.bio} />
       </div>
 	  </div>

@@ -3,7 +3,12 @@ import { client } from '@/lib/sanity'
 
 const builder = createImageUrlBuilder(client)
 
-export const urlFor = (source: any) => {
+export const urlFor = (source: any): string => {
   if (!source?.asset) return ''
-  return builder.image(source).url()
+  return builder
+    .image(source)
+    .fit('crop')
+    .crop('focalpoint')
+    .quality(90)
+    .url()
 }
