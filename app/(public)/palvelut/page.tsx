@@ -4,6 +4,18 @@ import Grainient from "@/components/Grainient"
 export default function PalvelutPage() {
 	return(
 		<div className="relative">
+			<style>
+			{`
+          html, body, *, button, a, input,
+          .disabled, a:disabled, input:disabled {
+            cursor: url('/cursor.png'), auto;
+          }
+
+          button:hover, a:hover, input:hover, .hover:hover {
+            cursor: url('/pointer.png'), auto;
+          }
+			`}
+		</style>
 			<div className="fixed inset-0 -z-10">
 	<Grainient
 		color1="F2D4EC"

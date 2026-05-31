@@ -21,6 +21,18 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
 
   return (
     <div className="relative flex flex-row gap-10 p-20">
+		<style>
+			{`
+          html, body, *, button, a, input,
+          .disabled, a:disabled, input:disabled {
+            cursor: url('/cursor.png'), auto;
+          }
+
+          button:hover, a:hover, input:hover, .hover:hover {
+            cursor: url('/pointer.png'), auto;
+          }
+			`}
+		</style>
       <div className="fixed inset-0 -z-10">
   <Grainient
     color1="F2D4EC"

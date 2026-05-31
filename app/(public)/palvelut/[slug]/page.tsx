@@ -20,7 +20,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
     return(
         <div className="relative flex flex-col md:flex-row gap-5 md:gap-10 p-5 md:p-20 border-2 border-[#ce0074] rounded-lg bg-white/50 md:m-10">
-        <div className="fixed inset-0 -z-10">
+        <style>
+			{`
+          html, body, *, button, a, input,
+          .disabled, a:disabled, input:disabled {
+            cursor: url('/cursor.png'), auto;
+          }
+
+          button:hover, a:hover, input:hover, .hover:hover {
+            cursor: url('/pointer.png'), auto;
+          }
+			`}
+		</style>
+		<div className="fixed inset-0 -z-10">
         <Grainient
         color1="F2D4EC"
         color2="#F8CEE6"

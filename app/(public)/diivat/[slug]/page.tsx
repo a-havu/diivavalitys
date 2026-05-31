@@ -39,6 +39,18 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
 
   return (
 	<div className="relative flex flex-col items-center">
+		<style>
+			{`
+          html, body, *, button, a, input,
+          .disabled, a:disabled, input:disabled {
+            cursor: url('/cursor.png'), auto;
+          }
+
+          button:hover, a:hover, input:hover, .hover:hover {
+            cursor: url('/pointer.png'), auto;
+          }
+			`}
+		</style>
     <div className="fixed inset-0 -z-10">
 	<Grainient
 		color1="F2D4EC"

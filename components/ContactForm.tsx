@@ -33,7 +33,7 @@ export default function ContactForm() {
 }
     
     return(
-        <div className="flex flex-col w-100 bg-[#CE0074] p-4 rounded-lg text-sm">
+        <div className="flex flex-col md:w-100 bg-[#CE0074] p-4 rounded-lg text-sm">
             <p className="ml-1 mt-3 text-white">Nimi *</p>
             <input
             placeholder="Diiva Diivanen"
@@ -80,7 +80,7 @@ export default function ContactForm() {
 
             <div className="flex justify-center">
               <button
-                className="bg-white w-35 h-10 rounded-full mt-5 hover:cursor-pointer font-bold text-md"
+                className="bg-white w-35 h-10 rounded-full mt-5 cursor-pointer font-bold text-md"
                 onClick={handleSubmit(onSubmit)}
                 disabled={isSubmitting}
                 >

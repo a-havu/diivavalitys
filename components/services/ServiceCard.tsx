@@ -7,7 +7,7 @@ export default function ServiceCard( {name, photo, description}: {name: string, 
     
     return(
         <div
-        className="rounded-lg overflow-clip bg-white w-90 md:w-120 m-5 cursor-pointer md:mb-10 border-2 border-[#ce0074] hover:shadow-lg shadow-[#CE0074]"
+		className="rounded-lg overflow-clip bg-white w-90 md:w-120 m-5 md:mb-10 border-2 border-[#ce0074] hover:shadow-lg shadow-[#CE0074]"
         >
             <div className="relative min-h-60 rounded-lg">
             <span className="z-40 absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">

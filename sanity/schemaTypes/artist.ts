@@ -63,15 +63,15 @@ export const artist = {
         ]
       }
     },
-    {
-      name: 'links',
-      title: 'Links',
-      type: 'array',
-      of: [{ type: 'object',
-        options: [
-          { name: 'type', title: 'Link type', type: 'string'} HOX
-        ]
-       }],
-    }
+    // {
+    //   name: 'links',
+    //   title: 'Links',
+    //   type: 'array',
+    //   of: [{ type: 'object',
+    //     options: [
+    //       { name: 'type', title: 'Link type', type: 'string'}
+    //     ]
+    //    }],
+    // }
   ]
 }
