@@ -7,7 +7,7 @@ import { urlFor } from '@/lib/urlFor'
 export default function NewsList({ news, frontpage }: { news: any[], frontpage?: boolean }) {
     return(
         <div>
-        <h1 className="flex text-2xl md:justify-start justify-center">Ajankohtaista</h1>
+        <h1 className="flex text-4xl md:justify-start justify-center">AJANKOHTAISTA</h1>
        {news
         .filter(story => !frontpage || story.etusivulle)
         .map(story => (

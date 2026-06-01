@@ -1,10 +1,11 @@
 import Calendar from "@/components/etusivu/Calendar";
 import News from "@/components/etusivu/News";
 import Grainient from "@/components/Grainient";
+import PastEvents from "@/components/PastEvents";
 
 export default function NewsPage () {
     return(
-        <div className="relative flex flex-col items-center gap-5 mt-5 mb-5 ml-30 mr-30">
+        <div className="relative flex flex-col items-center gap-5 mt-10 mb-5 ml-30 mr-30">
         <style>
 			{`
           html, body, *, button, a, input,
@@ -43,10 +44,9 @@ export default function NewsPage () {
         zoom={0.9}>
             </Grainient>
             </div>
-        
-        <h1 className="text-4xl">AJANKOHTAISTA</h1>
         <div className="flex flex-col md:flex-row gap-18">
-            <div><h1 className="text-2xl">Tulevat keikat</h1>
+            <div>
+			<h1 className="text-4xl flex mb-3">TULEVAT KEIKAT</h1>
         <Calendar
         frontpage={false}
         />
@@ -54,6 +54,7 @@ export default function NewsPage () {
         <News
         frontpage={false} />
         </div>
+		<PastEvents />
         </div>
     )
 }

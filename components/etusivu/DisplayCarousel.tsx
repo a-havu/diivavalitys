@@ -19,7 +19,7 @@ export default function DisplayCarousel({ images }) {
 	const { x, y } = images[index]?.hotspot ?? { x: 0.5, y: 0.5 }
 
 		return(
-			<div className="relative w-full h-full">
+			<div className="relative w-full md:h-full h-100">
 				<Image
 					src={urlFor(images[index])}
 					alt="slideshow"

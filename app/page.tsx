@@ -50,14 +50,14 @@ return(
     zoom={0.9}>
 		</Grainient>
 		</div>
-  <div className="h-120">
+  <div className="md:h-120 h-100">
 	<Carousel /></div>
   <Infosection />
   <Reviews />
   <div className="md:flex flex-col md:mt-15 items-center p-3">
   <div className="md:flex flex-col md:flex-row md:gap-10 md:m-10">
   <div className="md:flex-1 mt-3 mb-4">
-    <h1 className="flex text-2xl md:justify-start justify-center">Näe ja koe diivat</h1>
+    <h1 className="flex text-2xl md:justify-start justify-center mb-3">NÄE JA KOE DIIVAT</h1>
     <Calendar
     frontpage={true}
     />
