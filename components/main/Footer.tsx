@@ -19,28 +19,28 @@ export default function Footer() {
             <Link href="/tietosuojaseloste">Tietosuojaseloste</Link>
             </div>
             <div className="flex flex-row p-4 gap-3">
-                <Link href="">
+                <Link href="https://www.facebook.com/profile.php?id=61571537223438">
                 <Image
                 src="/fb.png"
-                alt="instagram"
+                alt="facebook-logo"
                 width={25}
                 height={25}
                 className="h-auto"
                 />
                 </Link>
-                <Link href="">
+                <Link href="https://www.instagram.com/diivavalitys">
                 <Image
                 src="/insta.png"
-                alt="instagram"
+                alt="instagram-logo"
                 width={25}
                 height={25}
                 className="h-auto"
                 />
                 </Link>
-                <Link href="">
+                <Link href="https://www.tiktok.com/@diivavalitys">
                 <Image
                 src="/tiktok.png"
-                alt="instagram"
+                alt="tiktok-logo"
                 width={25}
                 height={25}
                 className="h-auto"

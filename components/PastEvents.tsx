@@ -18,8 +18,8 @@ export default async function PastEvents() {
    		today.setHours(0, 0, 0, 0)
 
 	return(
-		<div className="mt-5">
-			<h1 className="text-3xl">TAPAHTUMA-ARKISTO</h1>
+		<div className="md:mt-10">
+			<h1 className="text-2xl md:text-3xl">MENNEET TAPAHTUMAT</h1>
 			{events
 				.filter(event => new Date(event.date) <= today)
 				.map(event => (
@@ -29,6 +29,7 @@ export default async function PastEvents() {
 					  date={event.date}
 					  link={event.link}
 					  artists={event.artists}
+					  past='true'
 					  />
 				  ))}
 		</div>

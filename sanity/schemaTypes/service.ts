@@ -6,7 +6,7 @@ export const service = {
     { name: 'name', title: 'Name', type: 'string' },
     { name: 'index', title: 'Index', type: 'number' },
     { name: 'description', title: 'Description', type: 'text' },
-    { name: 'photo', title: 'Photo', type: 'image' },
+    { name: 'photo', title: 'Photo', type: 'image', options: { hotspot: true }, },
     { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'name' }},
   ]
 }

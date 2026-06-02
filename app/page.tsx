@@ -55,9 +55,9 @@ return(
   <Infosection />
   <Reviews />
   <div className="md:flex flex-col md:mt-15 items-center p-3">
-  <div className="md:flex flex-col md:flex-row md:gap-10 md:m-10">
+  <div className="md:flex flex-col md:flex-row md:gap-15 md:m-10">
   <div className="md:flex-1 mt-3 mb-4">
-    <h1 className="flex text-2xl md:justify-start justify-center mb-3">NÄE JA KOE DIIVAT</h1>
+    <h1 className="flex md:text-4xl text-2xl md:justify-start justify-center mb-3">NÄE JA KOE DIIVAT</h1>
     <Calendar
     frontpage={true}
     />
@@ -72,7 +72,6 @@ return(
     className="flex justify-center bg-[#CE0074] text-center text-white rounded-lg p-4 mb-5">Kaikki ajankohtaiset
     </Link>
   </div>
-  <Logos />
   </div>
 );
 }

@@ -13,7 +13,7 @@ export default function Header() {
 
     return(
 	<header className="bg-[#CE0074] text-white">
-            <div className="flex justify-between md:justify-center p-4 cursor-pointer">
+            <div className="card-image flex justify-between md:justify-center p-4 cursor-pointer">
             <Link href="/">
             <Image 
             src="/valk-logo.png"

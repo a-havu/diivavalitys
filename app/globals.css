@@ -51,6 +51,10 @@ h1, h2, h3 {
   font-family: 'Cal Sans';
 }
 
+.card-image * {
+  cursor: url('/pointer.png'), pointer !important;
+}
+
 .prose a {
 	color: palevioletred;
 }

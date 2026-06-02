@@ -113,14 +113,12 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           date={event.date}
           link={event.link}
           artists={[]}
+		  past='false'
         />
       ))}
     </div>
   ) : (
-    <>
-    <p className="mt-5">Tällä diivalla ei ole tulevia keikkoja.</p>
-    <Link href="/otayhteytta" className="text-[#ce0074] font-bold mb-5">Buukkaa tästä!</Link>
-    </>
+    <Link href="/otayhteytta" className="text-[#ce0074] text-xl font-bold m-5">Buukkaa tämä diiva!</Link>
   )}
 	</div>
   )

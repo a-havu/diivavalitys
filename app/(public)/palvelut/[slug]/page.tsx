@@ -2,6 +2,7 @@ import { client } from '@/lib/sanity'
 import Grainient from '@/components/Grainient'
 import { urlFor } from '@/lib/urlFor'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export async function generateStaticParams() {
   const services = await client.fetch(`*[_type == "service"]{ slug }`)
@@ -18,8 +19,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     { slug }
   )
 
+  const hotspot = service.photo?.hotspot
+
     return(
-        <div className="relative flex flex-col md:flex-row gap-5 md:gap-10 p-5 md:p-20 border-2 border-[#ce0074] rounded-lg bg-white/50 md:m-10">
+        <div className="relative flex flex-col gap-5 md:gap-10 p-5 border-2 border-[#ce0074] rounded-lg bg-white/50 md:m-10">
         <style>
 			{`
           html, body, *, button, a, input,
@@ -58,18 +61,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         zoom={0.9}>
             </Grainient>
 		</div>
-        <Image
-        src={urlFor(service.photo)}
-        alt={service.name}
-        width={300}
-        height={300}
-        className="object-contain rounded-md flex-1 h-auto"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        <div>
-            <h2 className="flex justify-center mb-2 text-3xl">{service.name}</h2>
-            <p>{service.description}</p>
-        </div>
+		  <div className="relative w-full h-50 md:h-100">
+			<Image
+			src={urlFor(service.photo)}
+			alt={service.name}
+			fill
+			className="object-cover"
+			style={{ 
+				zIndex: -10,
+				objectPosition: hotspot ? `${hotspot.x * 100}% ${hotspot.y * 100}%` : 'center'
+			}}
+			sizes="100vw"
+			/>
+			<span className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
+		  <h1 className="text-6xl text-shadow-lg/300 text-white text-center">
+		  {service.name.toUpperCase()}
+		  </h1>
+		  </span>
+		  </div>
+            <p className="text-lg p-5">{service.description}</p>
+			<Link href="/otayhteytta" className="text-[#ce0074] text-xl font-bold p-5">Pyydä tarjous!</Link>
         </div>
     )
 }

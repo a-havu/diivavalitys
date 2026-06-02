@@ -28,6 +28,7 @@ export default async function Calendar({frontpage}: { frontpage?: boolean }) {
           date={event.date}
           link={event.link}
           artists={event.artists}
+		  past={false}
           />
       ))}
       </div>

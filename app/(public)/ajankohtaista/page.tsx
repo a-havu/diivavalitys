@@ -44,17 +44,22 @@ export default function NewsPage () {
         zoom={0.9}>
             </Grainient>
             </div>
-        <div className="flex flex-col md:flex-row gap-18">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-18">
             <div>
-			<h1 className="text-4xl flex mb-3">TULEVAT KEIKAT</h1>
+			<h1 className="text-2xl md:text-4xl flex mb-3">TULEVAT TAPAHTUMAT</h1>
         <Calendar
         frontpage={false}
         />
+		<div className="md:block hidden">
+			<PastEvents />
+		</div>
         </div>
         <News
         frontpage={false} />
-        </div>
+		<div className="md:hidden">
 		<PastEvents />
+		</div>
+        </div>
         </div>
     )
 }

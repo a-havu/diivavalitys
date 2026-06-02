@@ -9,5 +9,18 @@ export const message = {
     { name: 'createdAt', title: 'Received At', type: 'datetime' },
     { name: 'date', title: 'Date', type: 'text' },
     { name: 'budget', title: 'Budget', type: 'text' },
+	{
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Tarjouspyyntö', value: 'tarjouspyyntö' },
+          { title: 'Palaute', value: 'palaute' },
+          { title: 'Muu yhteydenotto', value: 'muu' },
+        ]
+      }
+    },
   ]
 }

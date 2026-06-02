@@ -63,15 +63,34 @@ export const artist = {
         ]
       }
     },
-    // {
-    //   name: 'links',
-    //   title: 'Links',
-    //   type: 'array',
-    //   of: [{ type: 'object',
-    //     options: [
-    //       { name: 'type', title: 'Link type', type: 'string'}
-    //     ]
-    //    }],
-    // }
+    {
+  name: 'links',
+  title: 'Links',
+  type: 'array',
+  of: [
+    {
+      type: 'object',
+      fields: [
+        {
+          name: 'platform',
+          title: 'Platform',
+          type: 'string',
+          options: {
+            list: [
+              { title: 'Instagram', value: 'instagram' },
+              { title: 'Facebook', value: 'facebook' },
+              { title: 'TikTok', value: 'tiktok' },
+            ]
+          }
+        },
+        {
+          name: 'url',
+          title: 'URL',
+          type: 'url',
+        }
+      ]
+    }
+  ]
+}
   ]
 }

@@ -7,7 +7,9 @@ import '@fontsource/cal-sans'
 import { cn } from "@/lib/utils";
 import ClickSpark from "@/components/ClickSpark";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({
+	subsets:['latin'],
+	variable:'--font-sans'});
 
 const karla = Karla({
   subsets: ['latin'],

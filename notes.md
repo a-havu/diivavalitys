@@ -17,10 +17,10 @@ Step 2 — Get your DNS records
 Once added, Resend will show the required DNS records you need to add. You'll need to configure two mandatory records:
 
 SPF — a TXT record listing IP addresses authorized to send email on behalf of your domain Resend
-DKIM — a TXT record containing a public key used to verify email authenticity Resend
+DKIM — a TXT record containing a public key used to verify email authenticity
 
 Step 3 — Add records to your DNS provider
-Go to wherever your DNS is managed (Cloudflare, GoDaddy, Namecheap, etc.) and add those records. Resend's UI adapts based on your DNS provider — for example, if you're using Cloudflare or Google Domains, it tailors the interface to match their settings. Resend
+Go to wherever your DNS is managed (Cloudflare, GoDaddy, Namecheap, etc.) and add those records. Resend's UI adapts based on your DNS provider — for example, if you're using Cloudflare or Google Domains, it tailors the interface to match their settings.
 Step 4 — Verify
 Click Check DNS next to your domain. Resend will query each record and update the status indicators. Propagation can take up to 24 hours. When all checks pass, the domain status changes to Verified. 
 Optional: DMARC

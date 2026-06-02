@@ -18,22 +18,24 @@ export default function ContactForm() {
     } = useForm<FormData>()
     
     const onSubmit = async (data: FormData) => {
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    })
-    if (res.ok) {
-      reset()
-    }
-  } catch (e) {
-    console.error(e)
-  }
-}
+	try {
+		const res = await fetch('/api/contact', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(data)
+		})
+		if (res.ok) {
+		reset()
+		} else {
+			console.error('Lähetys epäonnistui')
+		}
+		} catch (e) {
+			console.error(e)
+		}
+	}
     
     return(
-        <div className="flex flex-col md:w-100 bg-[#CE0074] p-4 rounded-lg text-sm">
+        <div className="flex flex-col w-80 md:w-100 bg-[#CE0074] p-4 rounded-lg text-sm">
             <p className="ml-1 mt-3 text-white">Nimi *</p>
             <input
             placeholder="Diiva Diivanen"
@@ -86,7 +88,7 @@ export default function ContactForm() {
                 >
                     {isSubmitting ? 'Lähetetään...' : 'LÄHETÄ'}
             </button></div>
-            {isSubmitSuccessful && <p className="text-white p-1">Viesti lähetetty!</p>}
+            {isSubmitSuccessful && <p className="text-white p-2 flex justify-center">Viesti lähetetty!</p>}
         </div>
     );
 }

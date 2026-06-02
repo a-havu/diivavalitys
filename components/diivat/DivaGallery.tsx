@@ -13,7 +13,7 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
     : artists
   return (
     <div>
-      <div className="md:flex md:justify-center gap-2 m-8 md:ml-0 ml-16">
+      <div className="md:flex md:justify-center gap-2 mt-5 md:m-8 md:ml-0 ml-12 md:ml-16">
         <button
           onClick={() => setActiveTag(null)}
            className={`px-4 py-2 rounded-sm border transition-colors ${

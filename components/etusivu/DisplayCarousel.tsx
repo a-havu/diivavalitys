@@ -16,20 +16,32 @@ export default function DisplayCarousel({ images }) {
 	}, [index]);
 
 	if (!images?.length) return null;
-	const { x, y } = images[index]?.hotspot ?? { x: 0.5, y: 0.5 }
+	const hotspot = images[index]?.hotspot
+	const objectPosition = hotspot ? `${hotspot.x * 100}% ${hotspot.y * 100}%` : 'center'
 
-		return(
-			<div className="relative w-full md:h-full h-100">
-				<Image
-					src={urlFor(images[index])}
-					alt="slideshow"
-					fill
-					className='object-cover'
-					loading='eager'
-					style={{ objectPosition: `${x * 100}% ${y * 100}%` }}
-					sizes="100vw"
-				/>
-			</div>
-		);
+	return (
+  <div className="relative w-full md:h-full h-100">
+    {images.map((image, i) => {
+      const hotspot = image?.hotspot
+      const objectPosition = hotspot ? `${hotspot.x * 100}% ${hotspot.y * 100}%` : 'center'
+      return (
+        <Image
+          key={i}
+          src={urlFor(image)}
+          alt="slideshow"
+          fill
+          priority
+          className='object-cover transition-opacity duration-700'
+          style={{ 
+            zIndex: i === index ? 1 : 0,
+            objectPosition,
+            opacity: i === index ? 1 : 0,
+          }}
+          sizes="100vw"
+        />
+      )
+    })}
+  </div>
+)
 
 }
