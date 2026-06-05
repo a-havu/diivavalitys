@@ -1,6 +1,11 @@
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 import Grainient from "@/components/Grainient";
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Ota yhteyttä",
+};
 
 export default function ContactPage() {
     return(
@@ -44,7 +49,7 @@ export default function ContactPage() {
 		</Grainient>
 		</div>
 			<div className="flex flex-col items-center md:m-10">
-            <h1 className="mt-5 mb-5 text-xl">Ota yhteyttä</h1>
+            <h1 className="mt-5 mb-5 text-2xl">OTA YHTEYTTÄ</h1>
         <ContactForm />
         </div>
         <div className="flex flex-col items-center mb-5 md:mt-10 md:gap-3 gap-1">

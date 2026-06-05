@@ -11,6 +11,19 @@ export async function generateStaticParams() {
   }))
 }
 
+export async function generateMetadata(
+	{ params }: { params: Promise<{ slug: string }>}
+): Promise<Metadata> {
+	const { slug } = await params;
+	const story = await client.fetch(
+		`*[_type == "story" && slug.current == $slug][0]`,
+		{ slug }
+	);
+	return {
+    title: story?.name ?? "",
+  };
+}
+
 export default async function StoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
@@ -69,7 +82,9 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
       <div className="p-5 flex-1">
       <h1 className="text-2xl mb-1">{story.name}</h1>
       <p className="text-xs mb-3">{new Date(story._createdAt).toLocaleDateString('fi-FI')}</p>
-      <PortableText value={story.story} />
+      	<div className="prose prose-a:text-[#ce0074] prose-a:underline">
+	<PortableText value={story.story} />
+	</div>
       </div>
     </div>
   )

@@ -3,12 +3,26 @@ import Grainient from '@/components/Grainient'
 import { urlFor } from '@/lib/urlFor'
 import Image from 'next/image'
 import Link from 'next/link'
+import type { Metadata } from "next"
 
 export async function generateStaticParams() {
   const services = await client.fetch(`*[_type == "service"]{ slug }`)
   return services.map((service: any) => ({
     slug: service.slug.current
   }))
+}
+
+export async function generateMetadata(
+	{ params }: { params: Promise<{ slug: string }>}
+): Promise<Metadata> {
+	const { slug } = await params;
+	const service = await client.fetch(
+		`*[_type == "service" && slug.current == $slug][0]`,
+		{ slug }
+	);
+	return {
+    title: service?.name ?? "",
+  };
 }
 
 export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {

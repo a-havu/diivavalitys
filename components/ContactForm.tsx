@@ -24,7 +24,10 @@ export default function ContactForm() {
 		headers: { 'Content-Type': 'application/json' },
 		body: JSON.stringify(data)
 		})
-		if (res.ok) {
+		const json = await res.json()
+		console.log(json)
+
+		if (json.success) {
 		reset()
 		} else {
 			console.error('Lähetys epäonnistui')
@@ -36,18 +39,28 @@ export default function ContactForm() {
     
     return(
         <div className="flex flex-col w-80 md:w-100 bg-[#CE0074] p-4 rounded-lg text-sm">
-            <p className="ml-1 mt-3 text-white">Nimi *</p>
+            <form onSubmit={handleSubmit(onSubmit)}>
+			
+			<label className="ml-1 mt-3 text-white text-lg">Yhteydenoton syy *
+			<br />
+			<input type="checkbox" />
+			</label>
+			<br />
+
+			<label className="ml-1 text-white text-lg">Nimi *
             <input
             placeholder="Diiva Diivanen"
-            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1"
+            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1 w-70 md:w-90"
             {...register('name', { required: 'Nimi tarvitaan' })}
             />
             {errors.name && <p className="text-white text-sm ml-1 flex justify-end">{errors.name.message}</p>}
+			</label>
+			<br />
 
-          <p className="ml-1 mt-3 text-white">Sähköpostiosoite *</p>
+          <label className="ml-1 mt-3 text-white text-lg">Sähköpostiosoite *
           <input
             placeholder="diiva@diivas.fi"
-            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1"
+            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1 w-70 md:w-90"
             {...register('email', {
                 required: 'Sähköposti tarvitaan',
                 pattern: {
@@ -57,38 +70,41 @@ export default function ContactForm() {
             })}
             />
             {errors.email && <p className="text-white text-sm ml-1 flex justify-end">{errors.email.message}</p>}
+			</label>
 
-            <p className="ml-1 mt-3 text-white font-bold">Tapahtuman ajankohta</p>
+            <p className="ml-1 mt-3 text-white text-lg">Tapahtuman ajankohta</p>
             <input
             placeholder="Arvio riittää"
-            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1"
+            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1 w-70 md:w-90"
             {...register('date')}
             />
 
-            <p className="ml-1 mt-3 text-white">Budjetti</p>
+            <p className="ml-1 mt-3 text-white text-lg">Budjetti</p>
             <input
             placeholder="Arvio riittää"
-            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1"
+            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1 w-70 md:w-90"
             {...register('budget')}
             />
 
-            <p className="ml-1 mt-3 text-white">Viestisi *</p>
+            <p className="ml-1 mt-3 text-white text-lg">Viestisi *</p>
             <textarea
             placeholder="Viesti..."
-            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1"
+            className="placeholder:opacity-70 placeholder:text-[#CE0074] placeholder:text-sm placeholder:italic p-1 w-70 md:w-90"
             {...register('message', { required: 'Viesti tarvitaan' })}
             />
             {errors.message && <p className="text-white text-sm ml-1 flex justify-end">{errors.message.message}</p>}
 
             <div className="flex justify-center">
               <button
-                className="bg-white w-35 h-10 rounded-full mt-5 cursor-pointer font-bold text-md"
+                className="bg-white w-35 h-10 rounded-full mt-5 cursor-pointer text-md"
                 onClick={handleSubmit(onSubmit)}
                 disabled={isSubmitting}
                 >
                     {isSubmitting ? 'Lähetetään...' : 'LÄHETÄ'}
-            </button></div>
+            </button>
+			</div>
             {isSubmitSuccessful && <p className="text-white p-2 flex justify-center">Viesti lähetetty!</p>}
-        </div>
+        </form>
+		</div>
     );
 }

@@ -1,6 +1,11 @@
 import { client } from '@/lib/sanity'
 import DivaGallery from '@/components/diivat/DivaGallery'
 import Grainient from '@/components/Grainient'
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Diivat",
+};
 
 export default async function DivaPage() {
   const artists = await client.fetch(

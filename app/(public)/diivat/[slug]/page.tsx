@@ -7,12 +7,27 @@ import ArtistImageGallery from '@/components/diivat/ArtistImageGallery';
 import EventCard from '@/components/etusivu/EventCard';
 import Link from 'next/link';
 import Grainient from '@/components/Grainient';
+import ArtistLinks from '@/components/diivat/ArtistLinks'
+import type { Metadata } from "next"
 
 export async function generateStaticParams() {
   const artists = await client.fetch(`*[_type == "artist"]{ slug }`)
   return artists.map((artist: any) => ({
     slug: artist.slug.current
   }))
+}
+
+export async function generateMetadata(
+	{ params }: { params: Promise<{ slug: string }>}
+): Promise<Metadata> {
+	const { slug } = await params;
+	const artist = await client.fetch(
+		`*[_type == "artist" && slug.current == $slug][0]`,
+		{ slug }
+	);
+	return {
+    title: artist?.name ?? "DIIVA",
+  };
 }
 
 export default async function ArtistPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -96,11 +111,21 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   </span>
   </div>
     <div className="border-2 border-[#ce0074] p-4 rounded-lg bg-white/50 flex flex-col md:flex-row ml-5 mr-5 md:ml-30 md:mr-30 gap-4">
-	<div className="columns-2 md:columns-2 flex-1 gap-1">
+	<div className="columns-2 md:columns-2 flex-1 gap-1 card-image">
 		<ArtistImageGallery photos={artist.photos} />
 		</div>
       <div className="flex-1 text-lg">
-      <PortableText value={artist.bio} />
+
+	<div className="prose prose-a:text-[#ce0074] prose-a:underline">
+	<PortableText value={artist.bio} />
+	</div>
+
+		{artist.links?.length > 0 && (
+			<div className="mt-20">
+			<ArtistLinks
+			links={artist.links} />
+			</div>
+			)}
       </div>
 	  </div>
     {events.length > 0 ? (

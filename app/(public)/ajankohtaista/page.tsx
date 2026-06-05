@@ -2,6 +2,11 @@ import Calendar from "@/components/etusivu/Calendar";
 import News from "@/components/etusivu/News";
 import Grainient from "@/components/Grainient";
 import PastEvents from "@/components/PastEvents";
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Ajankohtaista",
+};
 
 export default function NewsPage () {
     return(

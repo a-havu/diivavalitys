@@ -1,5 +1,10 @@
 import Services from "@/components/services/Services";
 import Grainient from "@/components/Grainient"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Palvelut",
+};
 
 export default function PalvelutPage() {
 	return(

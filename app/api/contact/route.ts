@@ -16,7 +16,6 @@ export async function POST(req: Request) {
   try {
     const { name, email, message, date, budget } = await req.json()
 
-    // Save to Sanity
     await client.create({
       _type: 'message',
       name,
@@ -27,14 +26,13 @@ export async function POST(req: Request) {
       createdAt: new Date().toISOString(),
     })
 
-    // Send email via Resend
     await resend.emails.send({
       from: 'Diivavälitys Contact Form <noreply@diivavalitys.fi>',
       to: 'jonas@diivavalitys.fi',
       replyTo: email,
-      subject: `Uusi yhteydenotto: ${name}`,
+      subject: `DIIVA-ASIAA from: ${name}`,
       html: `
-        <h2>Uusi yhteydenotto</h2>
+        <h2>Uusi yhteydenotto!</h2>
         <p><strong>Nimi:</strong> ${name}</p>
         <p><strong>Sähköposti:</strong> ${email}</p>
         <p><strong>Ajankohta:</strong> ${date || '–'}</p>
