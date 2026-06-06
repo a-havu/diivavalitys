@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 export default function Header() {
     const [open, setOpen] = useState(false)
   	const pathname = usePathname()
-  	const linkClass = (href) =>
+  	const linkClass = (href: string) =>
     `p-2 text-lg font-bold ${pathname === href ? 'text-black bg-white/80 rounded-lg p-2' : ''}`
 
     return(
