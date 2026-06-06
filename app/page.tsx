@@ -3,8 +3,6 @@ import Infosection from "@/components/etusivu/Infosection";
 import News from "@/components/etusivu/News";
 import Carousel from "@/components/etusivu/Carousel";
 import Reviews from "@/components/etusivu/Reviews";
-import Logos from "@/components/etusivu/Logos"
-import DivaNameGenerator from "@/components/etusivu/DivaNameGenerator";
 import Grainient from "@/components/Grainient"
 import Link from "next/link";
 
