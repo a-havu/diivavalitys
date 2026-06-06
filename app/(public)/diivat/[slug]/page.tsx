@@ -10,6 +10,13 @@ import Grainient from '@/components/Grainient';
 import ArtistLinks from '@/components/diivat/ArtistLinks'
 import type { Metadata } from "next"
 
+type Event = {
+  _id: string
+  name: string
+  date: string
+  link: string
+}
+
 export async function generateStaticParams() {
   const artists = await client.fetch(`*[_type == "artist"]{ slug }`)
   return artists.map((artist: any) => ({
@@ -38,7 +45,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
     { slug }
   )
 
-  const events = await client.fetch(
+  const events: Event[] = await client.fetch(
      `*[_type == "event" && references($artistId) && date >= $today] | order(date asc) {
      _id,
      name,

@@ -1,8 +1,17 @@
 import { client } from '@/lib/sanity'
 import EventCard from '@/components/etusivu/EventCard'
 
+type Event = {
+  _id: string
+  name: string
+  date: string
+  link: string
+  artists: string[]
+  etusivulle: boolean
+}
+
 export default async function Calendar({frontpage}: { frontpage?: boolean }) {
-    const events = await client.fetch(
+    const events: Event[] = await client.fetch(
     `*[_type == "event"] | order(date asc) {
         _id,
         name,

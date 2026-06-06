@@ -1,7 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
 
-export default function ArtistLinks({ links }) {
+type Link = {
+  url: string
+  platform: 'instagram' | 'facebook' | 'tiktok'
+}
+
+export default function ArtistLinks({ links }: { links: Link[] }) {
   const logos = {
     instagram: "/instagram.png",
     facebook: "/facebook.png",

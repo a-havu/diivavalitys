@@ -4,7 +4,18 @@ import Image from "next/image";
 import { useState, useEffect } from 'react'
 import { urlFor } from '@/lib/urlFor'
 
-export default function DisplayCarousel({ images }) {
+type SanityImage = {
+  asset: {
+    _ref: string
+    _type: string
+  }
+  hotspot?: {
+    x: number
+    y: number
+  }
+}
+
+export default function DisplayCarousel({ images }: {images: SanityImage[]}) {
 	const [index, setIndex] = useState (0);
 
 	useEffect(() => {

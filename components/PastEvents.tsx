@@ -1,9 +1,17 @@
 import { client } from '@/lib/sanity' 
 import EventCard from './etusivu/EventCard';
 
+type Event = {
+  _id: string
+  name: string
+  date: string
+  link: string
+  artists: string[]
+}
+
 export default async function PastEvents() {
 
-	const events = await client.fetch(
+	const events: Event[] = await client.fetch(
 		`*[_type == "event"] | order(date desc) {
 			_id,
 			name,
@@ -29,7 +37,7 @@ export default async function PastEvents() {
 					  date={event.date}
 					  link={event.link}
 					  artists={event.artists}
-					  past='true'
+					  past={true}
 					  />
 				  ))}
 		</div>
