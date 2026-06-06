@@ -1,6 +1,6 @@
 "use client";
 
-import { ImageGallery } from "react-image-grid-gallery";
+import { ImageGalleryMobileFixed } from "./ImageGalleryMobileFixed";
 import "react-image-grid-gallery/style.css";
 import { urlFor } from "@/lib/urlFor";
 
@@ -12,5 +12,5 @@ export default function ArtistImageGallery({ photos }: { photos: any[] }) {
     src: urlFor(photo),
   })) ?? [];
 
-  return <ImageGallery imagesData={imagesArray} />;
+  return <ImageGalleryMobileFixed imagesData={imagesArray} columnCount={3} enableDefaultLightbox />;
 }

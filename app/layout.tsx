@@ -6,6 +6,7 @@ import { Karla, Geist } from 'next/font/google'
 import '@fontsource/cal-sans'
 import { cn } from "@/lib/utils";
 import ClickSpark from "@/components/ClickSpark";
+import { Analytics } from "@vercel/analytics/next"
 
 const geist = Geist({
 	subsets:['latin'],
@@ -51,6 +52,7 @@ export default function RootLayout({
     <Footer />
   </footer>
   </ClickSpark>
+  <Analytics />
 </body>
     </html>
   );
