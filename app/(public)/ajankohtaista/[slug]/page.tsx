@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
 import { urlFor } from '@/lib/urlFor'
 import Grainient from '@/components/Grainient'
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   const stories = await client.fetch(`*[_type == "story"]{ slug }`)
