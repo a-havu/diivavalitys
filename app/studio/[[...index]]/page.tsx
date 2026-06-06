@@ -1,8 +1,5 @@
-'use client'
-
-import { NextStudio } from 'next-sanity/studio'
-import config from '../../../sanity.config'
+import StudioWrapper from './StudioWrapper'
 
 export default function StudioPage() {
-  return <NextStudio config={config} />
+  return <StudioWrapper />
 }

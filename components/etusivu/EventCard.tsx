@@ -1,6 +1,12 @@
 import Link from "next/link"
 
-export default function EventCard({ name, date, link, artists, past }: {name: 'string', date: 'date', link: 'url', artists: 'array', past: 'boolean'}) {
+export default function EventCard({ name, date, link, artists, past }: {
+		name: string,
+		date: string,
+		link: string,
+		artists: string[],
+		past: boolean}) 
+		{
   return link ? (
     <Link href={link} target="_blank" rel="noopener noreferrer">
       <div className={`card-image cursor-pointer flex flex-row mt-1 mb-1 p-3 gap-9 text-white items-center rounded-sm md:min-w-100 ${past ? 'bg-[#CE0074]/50' : 'bg-[#CE0074]'}`}>

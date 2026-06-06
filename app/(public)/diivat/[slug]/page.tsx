@@ -110,7 +110,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
   </h1>
   </span>
   </div>
-    <div className="border-2 border-[#ce0074] p-4 rounded-lg bg-white/50 flex flex-col md:flex-row ml-5 mr-5 md:ml-30 md:mr-30 gap-4">
+    <div className="border-2 border-[#ce0074] p-4 rounded-lg bg-white/50 flex flex-col md:flex-row ml-5 mr-5 md:ml-30 md:mr-30 md:gap-10">
 	<div className="columns-2 md:columns-2 flex-1 gap-1 card-image">
 		<ArtistImageGallery photos={artist.photos} />
 		</div>
@@ -121,7 +121,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
 	</div>
 
 		{artist.links?.length > 0 && (
-			<div className="mt-20">
+			<div className="mt-5 md:mt-20 flex justify-center">
 			<ArtistLinks
 			links={artist.links} />
 			</div>
@@ -138,7 +138,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
           date={event.date}
           link={event.link}
           artists={[]}
-		  past='false'
+		  past={false}
         />
       ))}
     </div>

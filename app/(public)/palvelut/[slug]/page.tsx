@@ -80,15 +80,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 			src={urlFor(service.photo)}
 			alt={service.name}
 			fill
-			className="object-cover"
+			className="object-cover rounded-lg"
 			style={{ 
-				zIndex: -10,
 				objectPosition: hotspot ? `${hotspot.x * 100}% ${hotspot.y * 100}%` : 'center'
 			}}
 			sizes="100vw"
 			/>
-			<span className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4">
-		  <h1 className="text-6xl text-shadow-lg/300 text-white text-center">
+			<span className="absolute bottom-0 left-0 w-full bg-linear-to-t from-black/70 to-transparent p-4">
+		  <h1 className="text-3xl md:text-6xl text-shadow-lg/300 text-white text-center">
 		  {service.name.toUpperCase()}
 		  </h1>
 		  </span>

@@ -33,7 +33,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
   )
 
   return (
-    <div className="relative flex flex-row gap-10 p-20">
+    <div className="relative flex flex-col md:flex-row gap-3 md:gap-10 p-4 md:p-20">
 		<style>
 			{`
           html, body, *, button, a, input,
@@ -79,7 +79,7 @@ export default async function StoryPage({ params }: { params: Promise<{ slug: st
         height={300}
         className="object-contain rounded-md flex-1 h-auto"
       />
-      <div className="p-5 flex-1">
+      <div className="p-1 md:p-5 flex-1">
       <h1 className="text-2xl mb-1">{story.name}</h1>
       <p className="text-xs mb-3">{new Date(story._createdAt).toLocaleDateString('fi-FI')}</p>
       	<div className="prose prose-a:text-[#ce0074] prose-a:underline">

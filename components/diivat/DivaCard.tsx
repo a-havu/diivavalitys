@@ -14,6 +14,7 @@ export default function DivaCard({name, photo}: { name: string, photo: any }) {
             alt={name}
             fill
             className="object-cover"
+			sizes="50vw"
 			style={{ 
 			objectPosition: hotspot ? `${hotspot.x * 100}% ${hotspot.y * 100}%` : 'center'
 		}}

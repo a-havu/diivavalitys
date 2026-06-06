@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="mb-5">Y-tunnus: 3513385-8</p>
             <Link href="/tietosuojaseloste">Tietosuojaseloste</Link>
             </div>
-            <div className="flex flex-row p-4 gap-3">
+            <div className="flex flex-row p-4 gap-3 card-image">
                 <Link href="https://www.facebook.com/profile.php?id=61571537223438" target="_blank" rel="noopener noreferrer">
                 <Image
                 src="/fb-white.png"

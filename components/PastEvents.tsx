@@ -19,7 +19,7 @@ export default async function PastEvents() {
 
 	return(
 		<div className="md:mt-10">
-			<h1 className="text-2xl md:text-3xl">MENNEET TAPAHTUMAT</h1>
+			<h1 className="text-2xl md:text-3xl mb-3">MENNEET TAPAHTUMAT</h1>
 			{events
 				.filter(event => new Date(event.date) <= today)
 				.map(event => (
