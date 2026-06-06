@@ -1,41 +1,61 @@
 import { useEffect, useRef, type ComponentProps } from "react";
 import { ImageGallery } from "react-image-grid-gallery";
 
-type ImageGalleryPropsType = ComponentProps<typeof ImageGallery>; // ← inferred from component
+type ImageGalleryProps = ComponentProps<typeof ImageGallery>;
 
-export function ImageGalleryMobileFixed(props: ImageGalleryPropsType) {
+function unlockScroll() {
+  document.body.style.overflow = "";
+  document.body.style.overflowY = "";
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  document.body.style.touchAction = "";
+  document.documentElement.style.overflow = "";
+}
+
+export function ImageGalleryMobileFixed(props: ImageGalleryProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const observer = new MutationObserver(() => {
-      const lightboxOpen =
-        document.querySelector("[class*='lightbox']") !== null ||
-        document.querySelector("[class*='modal']") !== null ||
-        document.querySelector("[role='dialog']") !== null;
+    const bodyObserver = new MutationObserver(() => {
+      const isLocked = document.body.style.overflow === "hidden"
+        || document.body.style.overflowY === "hidden";
 
-      if (!lightboxOpen) {
-        document.body.style.overflow = "";
-        document.body.style.position = "";
-        document.body.style.touchAction = "";
-        document.documentElement.style.overflow = "";
+      if (!isLocked) {
+        unlockScroll();
       }
     });
 
-    observer.observe(document.body, { childList: true, subtree: true });
+    bodyObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["style", "class"],
+    });
 
-    const el = wrapperRef.current;
-    const noop = (e: TouchEvent) => e;
-    el?.addEventListener("touchstart", noop, { passive: true });
-    el?.addEventListener("touchmove", noop, { passive: true });
+    const handleTouchEnd = (e: TouchEvent) => {
+      const target = e.target as HTMLElement;
+      const isOverlay =
+        target.tagName === "DIALOG" ||
+        target.closest("[class*='overlay']") !== null ||
+        target.closest("[class*='backdrop']") !== null ||
+        target.closest("[class*='lightbox']") !== null;
+
+      if (isOverlay) {
+        setTimeout(unlockScroll, 100);
+      }
+    };
+
+    document.addEventListener("touchend", handleTouchEnd, { passive: true });
+
+    const handleKeyUp = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setTimeout(unlockScroll, 100);
+    };
+    document.addEventListener("keyup", handleKeyUp);
 
     return () => {
-      observer.disconnect();
-      el?.removeEventListener("touchstart", noop);
-      el?.removeEventListener("touchmove", noop);
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.touchAction = "";
-      document.documentElement.style.overflow = "";
+      bodyObserver.disconnect();
+      document.removeEventListener("touchend", handleTouchEnd);
+      document.removeEventListener("keyup", handleKeyUp);
+      unlockScroll();
     };
   }, []);
 
