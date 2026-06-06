@@ -3,59 +3,31 @@ import { ImageGallery } from "react-image-grid-gallery";
 
 type ImageGalleryProps = ComponentProps<typeof ImageGallery>;
 
-function unlockScroll() {
-  document.body.style.overflow = "";
-  document.body.style.overflowY = "";
-  document.body.style.position = "";
-  document.body.style.top = "";
-  document.body.style.width = "";
-  document.body.style.touchAction = "";
-  document.documentElement.style.overflow = "";
-}
-
 export function ImageGalleryMobileFixed(props: ImageGalleryProps) {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const bodyObserver = new MutationObserver(() => {
-      const isLocked = document.body.style.overflow === "hidden"
-        || document.body.style.overflowY === "hidden";
+    const dialog = wrapperRef.current?.querySelector("dialog");
 
-      if (!isLocked) {
-        unlockScroll();
+    const observer = new MutationObserver(() => {
+      const isDialogOpen = dialog?.open ?? false;
+      if (!isDialogOpen) {
+        document.documentElement.style.overflow = "";
       }
     });
 
-    bodyObserver.observe(document.body, {
+    if (dialog) {
+      observer.observe(dialog, { attributes: true, attributeFilter: ["open"] });
+    }
+
+    observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["style", "class"],
+      attributeFilter: ["style"],
     });
-
-    const handleTouchEnd = (e: TouchEvent) => {
-      const target = e.target as HTMLElement;
-      const isOverlay =
-        target.tagName === "DIALOG" ||
-        target.closest("[class*='overlay']") !== null ||
-        target.closest("[class*='backdrop']") !== null ||
-        target.closest("[class*='lightbox']") !== null;
-
-      if (isOverlay) {
-        setTimeout(unlockScroll, 100);
-      }
-    };
-
-    document.addEventListener("touchend", handleTouchEnd, { passive: true });
-
-    const handleKeyUp = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setTimeout(unlockScroll, 100);
-    };
-    document.addEventListener("keyup", handleKeyUp);
 
     return () => {
-      bodyObserver.disconnect();
-      document.removeEventListener("touchend", handleTouchEnd);
-      document.removeEventListener("keyup", handleKeyUp);
-      unlockScroll();
+      observer.disconnect();
+      document.documentElement.style.overflow = "";
     };
   }, []);
 
