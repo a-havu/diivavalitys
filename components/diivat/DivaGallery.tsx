@@ -40,13 +40,15 @@ export default function DivaGallery({ artists }: { artists: any[] }) {
       </div>
 
       <div className="grid md:grid-cols-4 gap-4 md:gap-8 p-8">
-        {filtered.map(artist => (
-          <div key={artist._id}>
-              <Link href={`/diivat/${artist.slug.current}`}>
-                <DivaCard name={artist.name} photo={artist.photos[0]} />
-              </Link>
-          </div>
-        ))}
+        {filtered
+		.filter((artist: any) => artist.slug?.current)
+		.map(artist => (
+			<div key={artist._id}>
+			<Link href={`/diivat/${artist.slug.current}`}>
+				<DivaCard name={artist.name} photo={artist.photos[0]} />
+			</Link>
+			</div>
+		))}
       </div>
     </div>
   )
