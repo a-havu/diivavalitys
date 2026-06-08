@@ -19,8 +19,14 @@ type Event = {
 
 export async function generateStaticParams() {
   const artists = await client.fetch(
-    `*[_type == "artist" && defined(slug.current)]{ slug }`
+    `*[_type == "artist" && defined(slug.current)]{ slug, name }`
   )
+  
+  console.log("Artists found:", artists.length)
+  artists.forEach((artist: any) => {
+    console.log("Artist:", artist.name, "| Slug:", artist.slug?.current)
+  })
+
   return artists.map((artist: any) => ({
     slug: artist.slug.current
   }))
@@ -47,18 +53,27 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
     { slug }
   )
 
-  const events: Event[] = await client.fetch(
-     `*[_type == "event" && references($artistId) && date >= $today] | order(date asc) {
-     _id,
-     name,
-     date,
-     link
-     }`,
-     {
-      artistId: artist._id,
+const events: Event[] = await client.fetch(
+    `*[_type == "event" && references($artistId) && date >= $today] | order(date asc) {
+    _id,
+    name,
+    date,
+    link
+    }`,
+    {
+      artistId: artist?._id ?? '',
       today: new Date().toISOString()
-     }
+    }
   )
+
+  if (!artist || !artist.photos?.length) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-xl">Artistia ei löydy :(</p>
+      </div>
+    )
+  }
+
   const hotspot = artist.photos[0]?.hotspot
 
   return (
@@ -126,7 +141,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ slug: s
       <div className="flex-1 text-lg">
 
 	<div className="prose prose-a:text-[#ce0074] prose-a:underline">
-	<PortableText value={artist.bio} />
+	<PortableText value={artist.bio ?? []} />
 	</div>
 
 		{artist.links?.length > 0 && (
