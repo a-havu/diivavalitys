@@ -18,7 +18,9 @@ type Event = {
 }
 
 export async function generateStaticParams() {
-  const artists = await client.fetch(`*[_type == "artist"]{ slug }`)
+  const artists = await client.fetch(
+    `*[_type == "artist" && defined(slug.current)]{ slug }`
+  )
   return artists.map((artist: any) => ({
     slug: artist.slug.current
   }))
