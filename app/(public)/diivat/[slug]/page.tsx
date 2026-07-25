@@ -74,7 +74,7 @@ const events: Event[] = await client.fetch(
     )
   }
 
-  const hotspot = artist.photos[0]?.hotspot
+  const hotspot = artist.photos[0]?.hotspot ?? { x: 0.5, y: 0.5 }
 
   return (
 	<div className="relative flex flex-col items-center">
