@@ -36,7 +36,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const hotspot = service.photo?.hotspot
 
     return(
-        <div className="relative flex flex-col gap-5 md:gap-10 p-3 md:p-5 border-2 border-[#ce0074] rounded-lg bg-white/50 md:m-10 m-3">
+        <div className="relative flex flex-col gap-5 md:gap-10 p-3 md:p-5 border-[#ce0074] rounded-lg bg-white/50 md:m-10 m-3">
         <style>
 			{`
           html, body, *, button, a, input,

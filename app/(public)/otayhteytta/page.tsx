@@ -52,7 +52,7 @@ export default function ContactPage() {
             <h1 className="mt-5 mb-5 text-2xl">OTA YHTEYTTÄ</h1>
         <ContactForm />
         </div>
-        <div className="flex flex-col items-center mb-5 md:mt-10 md:gap-3 gap-1">
+        <div className="w-80 flex flex-col items-center mb-5 md:mt-10 md:gap-3 gap-1 bg-white/50 p-5 rounded-lg">
             <Image
 			src="/ceo.jpeg"
 			alt="CEO Jonas Kuusiso"
