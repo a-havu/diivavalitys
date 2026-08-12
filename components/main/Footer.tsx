@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link"
 
+const year = new Date().getFullYear();
+
 export default function Footer() {
     return(
         <footer className="bg-[#CE0074] p-5 text-xs flex flex-col items-center">
@@ -18,6 +20,8 @@ export default function Footer() {
             <p className="mb-5">Y-tunnus: 3513385-8</p>
             <Link href="/tietosuojaseloste">Tietosuojaseloste</Link>
             </div>
+			<p className="mt-4 text-white">Diivavälitys © {year}. All rights reserved.</p> 
+			<p className="mt-2 text-white">Nettisivujen toteutus: <Link href="http://github.com/a-havu" target="_blank" rel="noopener noreferrer" className="underline">Aino Havu</Link></p>
             <div className="flex flex-row p-4 gap-3 card-image">
                 <Link href="https://www.facebook.com/profile.php?id=61571537223438" target="_blank" rel="noopener noreferrer">
                 <Image
