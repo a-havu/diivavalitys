@@ -11,9 +11,6 @@ export default function Header() {
   	const linkClass = (href: string) =>
     `p-2 text-lg font-bold ${pathname === href ? 'text-black bg-white/80 rounded-lg p-2' : ''}`
 
-    const extLinkClass = (href: string) =>
-    `p-2 text-lg font-bold text-[#CE0074] bg-white rounded-sm ${pathname === href ? 'text-black bg-white/80 rounded-lg p-2' : ''}`
-
     return(
 	<header className="bg-[#CE0074] text-white">
             <div className="card-image flex justify-between md:justify-center p-4 cursor-pointer">
@@ -45,7 +42,7 @@ export default function Header() {
 			<Link href="/palvelut" className={linkClass('/palvelut')}>PALVELUT</Link>
 			<Link href="/ajankohtaista" className={linkClass('/ajankohtaista')}>AJANKOHTAISTA</Link>
 			<Link href="/otayhteytta" className={linkClass('/otayhteytta')}>OTA YHTEYTTÄ</Link>
-            <Link href="/otayhteytta" target="_blank" rel="noopener noreferrer" className={extLinkClass('http://diivatoimitus.fi')}>DIIVATOIMITUS</Link>
+            <Link href="http://diivatoimitus.fi" target="_blank" rel="noopener noreferrer" className={linkClass('http://diivatoimitus.fi')}>DIIVATOIMITUS</Link>
 			</nav>
             {open && (
                 <nav className="md:hidden flex flex-col items-center gap-4 pb-6">
@@ -54,7 +51,7 @@ export default function Header() {
                 <Link href="/ajankohtaista" className="p-2 text-lg font-bold" onClick={() => setOpen(false)}>AJANKOHTAISTA</Link>
                 <Link href="/otayhteytta" className="p-2 text-lg font-bold" onClick={() => setOpen(false)}>
                     OTA YHTEYTTÄ</Link>
-                <Link href="http://diivatoimitus.fi" target="_blank" rel="noopener noreferrer" className="p-2 text-lg font-bold text-[#CE0074] bg-white rounded-sm" onClick={() => setOpen(false)}>DIIVAT</Link>
+                <Link href="http://diivatoimitus.fi" target="_blank" rel="noopener noreferrer" className="p-2 text-lg font-bold text-[#CE0074] bg-white rounded-sm" onClick={() => setOpen(false)}>DIIVATOIMITUS</Link>
                 </nav>
             )}
         </header>
