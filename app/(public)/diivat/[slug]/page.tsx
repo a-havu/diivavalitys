@@ -136,7 +136,7 @@ const events: Event[] = await client.fetch(
 		</div>
       <div className="flex-1 text-lg">
 
-	<div className="prose prose-a:text-[#ce0074] prose-a:underline">
+	<div className="prose prose-a:text-[#ce0074] prose-a:underline white-space: pre-line">
 	<PortableText value={artist.bio ?? []}/>
 	</div>
 
