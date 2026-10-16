@@ -137,7 +137,7 @@ const events: Event[] = await client.fetch(
       <div className="flex-1 text-lg">
 
 	<div className="prose prose-a:text-[#ce0074] prose-a:underline">
-	<PortableText value={artist.bio ?? []} />
+	<PortableText value={artist.bio ?? []} className="mb-2"/>
 	</div>
 
 		{artist.links?.length > 0 && (
