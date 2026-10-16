@@ -46,10 +46,10 @@ const components = {
     // Custom types if needed
   },
   block: {
-    normal: ({ children }) => <p>{children}</p>,
-    h2: ({ children }) => <h2>{children}</h2>,
-    h3: ({ children }) => <h3>{children}</h3>,
-    blockquote: ({ children }) => <blockquote>{children}</blockquote>,
+    normal: ({ children }: {children: any}) => <p>{children}</p>,
+    h2: ({ children }: {children: any}) => <h2>{children}</h2>,
+    h3: ({ children }: {children: any}) => <h3>{children}</h3>,
+    blockquote: ({ children }: {children: any}) => <blockquote>{children}</blockquote>,
   },
   marks: {
     link: ({ value, children }) => (
