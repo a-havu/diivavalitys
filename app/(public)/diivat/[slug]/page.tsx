@@ -41,6 +41,23 @@ export async function generateMetadata(
   };
 }
 
+const components = {
+  types: {
+    // Custom types if needed
+  },
+  block: {
+    normal: ({ children }) => <p>{children}</p>,
+    h2: ({ children }) => <h2>{children}</h2>,
+    h3: ({ children }) => <h3>{children}</h3>,
+    blockquote: ({ children }) => <blockquote>{children}</blockquote>,
+  },
+  marks: {
+    link: ({ value, children }) => (
+      <a href={value.href}>{children}</a>
+    )
+  }
+};
+
 export default async function ArtistPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   
@@ -137,7 +154,7 @@ const events: Event[] = await client.fetch(
       <div className="flex-1 text-lg">
 
 	<div className="prose prose-a:text-[#ce0074] prose-a:underline">
-	<PortableText value={artist.bio ?? []} className="mb-2"/>
+	<PortableText value={artist.bio ?? []} components={components}/>
 	</div>
 
 		{artist.links?.length > 0 && (
