@@ -42,7 +42,7 @@ export default function Header() {
 			<Link href="/palvelut" className={linkClass('/palvelut')}>PALVELUT</Link>
 			<Link href="/ajankohtaista" className={linkClass('/ajankohtaista')}>AJANKOHTAISTA</Link>
 			<Link href="/otayhteytta" className={linkClass('/otayhteytta')}>OTA YHTEYTTÄ</Link>
-            <Link href="http://diivatoimitus.fi" target="_blank" rel="noopener noreferrer" className={linkClass('http://diivatoimitus.fi')}>DIIVATOIMITUS</Link>
+            <Link href="http://diivatoimitus.fi" target="_blank" rel="noopener noreferrer" className="p-2 text-lg font-bold text-[#CE0074] bg-white rounded-sm">DIIVATOIMITUS</Link>
 			</nav>
             {open && (
                 <nav className="md:hidden flex flex-col items-center gap-4 pb-6">
